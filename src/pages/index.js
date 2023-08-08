@@ -5,6 +5,9 @@ import Layout from '../3_components/1_global/Layout';
 import Seo from '../3_components/1_global/Seo';
 import Hero from '../3_components/3_homepage/Hero';
 import Introduction from '../3_components/3_homepage/Introduction';
+import Sidebar from '../3_components/2_layouts/1_navigation/Sidebar';
+import References from '../3_components/3_homepage/References';
+import Footer from '../3_components/2_layouts/Footer';
 
 const IndexPage = () => {
   const { dark, closeNavHeader } = useGlobalContext();
@@ -24,21 +27,27 @@ const IndexPage = () => {
   });
   //
   return (
-    <Layout>
-      <main
-        id="index_content"
-        className="
-        bg-background-light
-        dark:bg-background-dark
+    <div
+      className={`${dark ? 'dark' : ''} bg-background-light
+        dark:bg-background-dark`}
+    >
+      <Hero />
 
-        flex flex-col
+      <div id="index_content" className="relative">
+        <Sidebar />
+        <main
+          className="min-h-screen
+        flex flex-col gap-8
         max-w-[1240px]
         overflow-x-hidden
-        "
-        //  dark:bg-background-dark         pt-16 min-h-screen sm:px-8
-      >
-        <Hero />
-        <Introduction />
+        homePageContent__main
+        bg-background-light
+        dark:bg-background-dark"
+        >
+          <Introduction />
+          <References />
+        </main>
+
         {/* <Hero />
         <Introduction />
         <NewIntroduction />
@@ -47,8 +56,9 @@ const IndexPage = () => {
         <Contact />
         <Sidebar />
         {dark && <BackgroundAnimation />} */}
-      </main>
-    </Layout>
+      </div>
+      <Footer />
+    </div>
   );
 };
 

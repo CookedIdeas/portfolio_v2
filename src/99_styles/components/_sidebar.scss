@@ -1,0 +1,13 @@
+.triangle-with-shadow {
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.triangle-with-shadow:after {
+  content: '';
+  position: absolute;
+  height: 50px;
+  transform: rotate(45deg);
+  top: 75px;
+  left: -2.3rem;
+}
