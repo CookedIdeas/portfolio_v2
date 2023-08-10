@@ -1,9 +1,7 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { useGlobalContext } from '../../../2_context/GlobalContext';
 
-const RefLogos = ({ project }) => {
-  const { dark } = useGlobalContext();
+const RefLogos = ({ project, dark }) => {
   const { basic_name } = project;
 
   const logosContainerStyle =

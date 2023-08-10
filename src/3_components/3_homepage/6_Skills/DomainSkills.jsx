@@ -6,7 +6,7 @@ const DomainSkills = ({ title, skillsData }) => {
   return (
     <div className="pl-2 flex flex-col gap-4 mb-2">
       {title && (
-        <h5 className="capitalize font-semibold dark:font-normal">{title}</h5>
+        <h4 className="capitalize font-semibold dark:font-normal">{title}</h4>
       )}
 
       <div className="self-center flex flex-col sm:flex-row sm:flex-wrap gap-4 w-full items-center justify-center sm:justify-start">

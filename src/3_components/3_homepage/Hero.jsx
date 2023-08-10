@@ -37,7 +37,7 @@ const Hero = () => {
   );
 
   return (
-    <div style={{ display: 'grid' }}>
+    <div style={{ display: 'grid' }} className="bg-black">
       <GatsbyImage
         style={{
           gridArea: '1/1',
@@ -55,20 +55,21 @@ const Hero = () => {
           display: 'grid',
         }}
       >
-        <div className="flex flex-col gap-4 items-center justify-center h-full justify-center md:pt-28  text-center">
+        <div className="flex flex-col gap-4 items-center justify-center h-full md:pt-28  text-center ">
           <h1 className="font-semibold text-5xl md:mb-4 !text-white">
             Gabriel Gourcerol
           </h1>
-          <h3 className="text-2xl flex flex-col gap-4 items-center md:items-start ">
+          <h2 className="text-2xl flex flex-col gap-4 items-center md:items-start ">
             <span className="md:pl-24 !text-white">Développeur full-stack</span>
             <span className="md:pl-32 !text-white">
               spécialisé solutions Saas
             </span>
-          </h3>
+          </h2>
           <div className="mt-8">
             <Button
               type={'Anchor'}
               to={'/#introduction_section'}
+              alt_text={'Voir la partie suivante'}
               text_fr={
                 <IconContext.Provider
                   value={{ size: '1.4rem' }}

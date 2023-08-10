@@ -33,6 +33,12 @@ const tailwindSettings = {
 
   // === EXTEND CLASSES === //
   extend: {
+    dropShadow: {
+      glow: [
+        '0 0px 20px rgba(255,255, 255, 0.45)',
+        '0 0px 65px rgba(255, 255,255, 0.35)',
+      ],
+    },
     minHeight: {
       85: '85vh',
       35: '35vh',

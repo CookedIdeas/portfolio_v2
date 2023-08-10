@@ -10,7 +10,7 @@ const AvatarPng = () => {
   return (
     // <h2>img</h2>
     <div className="avatar">
-      <GatsbyImage alt="imageAlt" image={avatarImgPath} loading="eager" />
+      <GatsbyImage alt="mon portrait" image={avatarImgPath} loading="eager" />
     </div>
   );
 };

@@ -16,7 +16,7 @@ const SocialLinks = ({ forSidebar }) => {
             key={id}
             className={`text-primary-light dark:text-darkGreen ${
               forSidebar ? 'h-8 w-8' : 'h-10 w-10'
-            }  fill-primary-light dark:fill-primary-dark`}
+            }  fill-primary-light dark:fill-primary-dark transition-all duration-200 hover:scale-[1.1] hover:drop-shadow-glow`}
             aria-label={alt_fr}
             href={url}
             rel="noreferrer"

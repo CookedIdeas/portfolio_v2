@@ -3,7 +3,8 @@ import Button from '../../99_smallReusable/Button';
 import RefLogos from './RefLogos';
 
 const ReferenceInformation = ({ project }) => {
-  const { title, stacks, description, link, git } = project;
+  const { title, stacks, description, link, git, disabled, gitDisabled } =
+    project;
 
   const partClass = 'inline';
 
@@ -33,8 +34,10 @@ const ReferenceInformation = ({ project }) => {
           <Button
             type={'ExternalLink'}
             to={link}
-            text_fr={'Voir'}
-            additionalClassName={'mt-2 w-36'}
+            text_fr={'Visiter le site'}
+            alternative_content={'Bientôt disponible'}
+            additionalClassName={'mt-2 w-44'}
+            disabled={disabled}
           />
         )}
         {git && (
@@ -42,7 +45,9 @@ const ReferenceInformation = ({ project }) => {
             type={'ExternalLink'}
             to={git}
             text_fr={'Voir le git'}
-            additionalClassName={'mt-2 w-36'}
+            alternative_content={'Git à venir'}
+            additionalClassName={'mt-2 w-44'}
+            disabled={gitDisabled}
           />
         )}
       </div>

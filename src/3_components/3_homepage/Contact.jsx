@@ -59,6 +59,7 @@ const Contact = () => {
               <BsFillSendFill className="" />
             </IconContext.Provider>
           }
+          alt_text={'Envoyer le message'}
           additionalClassName={'w-1/2 self-center'}
         />
       </form>

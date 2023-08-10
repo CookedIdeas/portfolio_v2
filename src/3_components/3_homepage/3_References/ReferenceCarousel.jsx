@@ -13,7 +13,6 @@ const ReferenceCarousel = ({ imagesArray, project }) => {
         <Carousel
           showThumbs={false}
           ariaLabel={`carousel of ${project.title} project`}
-          autoFocus={false}
           autoPlay={true}
           infiniteLoop={true}
           stopOnHover={true}

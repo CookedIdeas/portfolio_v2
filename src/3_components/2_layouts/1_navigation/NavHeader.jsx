@@ -1,5 +1,4 @@
 import React from 'react';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
 import ThemeSwitch from './ThemeSwitch';
 import { navLinks } from '../../../1_assets/datas/navLinks';
@@ -7,7 +6,7 @@ import SocialLinks from './SocialLinks';
 import GradientLine from '../../99_smallReusable/GradientLine';
 
 const NavHeader = ({ isPageScrollOnTop = true }) => {
-  const { dark, isNavHeaderOpen, closeNavHeader } = useGlobalContext();
+  const { dark, isNavHeaderOpen } = useGlobalContext();
   return (
     <nav
       // className={`fixed top-0`}
@@ -19,7 +18,7 @@ const NavHeader = ({ isPageScrollOnTop = true }) => {
     >
       <ul className="text-center flex flex-col gap-1.5 fluid-xl my-2">
         {navLinks.map((link) => {
-          const { id, text_fr, text_eng, toAnchor } = link;
+          const { id, text_fr, toAnchor } = link;
           return (
             <li
               key={id}

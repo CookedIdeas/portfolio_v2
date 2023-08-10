@@ -7,7 +7,8 @@ export const references = [
     stacks: ['Reactjs', 'Scss', 'Strapi', 'Stripe'],
     description:
       'Lorem ipsum dolor sit amet. Ad velit possimus aut quae suscipit At voluptatem iure ut perspiciatis totam. Et nostrum cumque aut recusandae inventore qui eius magnam. Ut nisi odio sit sunt nisi et enim sequi ut officiis minima eos magnam aperiam qui beatae tenetur!',
-    link: 'www.google.fr',
+    link: 'www.perdu.fr',
+    disabled: true,
   },
   {
     id: 2,
@@ -16,7 +17,9 @@ export const references = [
     stacks: ['Reactjs', 'Leaflet', 'LeafletReact', 'Adobe Illustrator'],
     description:
       'Lorem ipsum dolor sit amet. Ad velit possimus aut quae suscipit At voluptatem iure ut perspiciatis totam. Et nostrum cumque aut recusandae inventore qui eius magnam. Ut nisi odio sit sunt nisi et enim sequi ut officiis minima eos magnam aperiam qui beatae tenetur!',
-    link: 'www.google.fr',
-    git: 'https://github.com',
+    link: 'https://lab-rh.com/carto-viva-2023',
+    git: 'https://lab-rh.com/carto-viva-2023',
+    gitDisabled: true,
+    disabled: false,
   },
 ];

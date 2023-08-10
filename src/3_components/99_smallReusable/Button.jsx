@@ -1,9 +1,15 @@
 import React from 'react';
 import { useGlobalContext } from '../../2_context/GlobalContext';
-import { Link } from 'gatsby';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
-const Button = ({ type, text_fr, to, additionalClassName = 'w-auto' }) => {
+const Button = ({
+  type,
+  text_fr,
+  alternative_content = '',
+  alt_text = '',
+  to,
+  additionalClassName = 'w-auto',
+  disabled = false,
+}) => {
   const { dark } = useGlobalContext();
 
   const buttonClassName = `${
@@ -12,22 +18,47 @@ const Button = ({ type, text_fr, to, additionalClassName = 'w-auto' }) => {
 
   if (type === 'Anchor') {
     return (
-      <a className={buttonClassName} href={to}>
+      <a
+        className={buttonClassName}
+        href={!disabled && to}
+        aria-label={alt_text}
+        aria-disabled={disabled}
+        disabled={disabled}
+      >
         {text_fr}
       </a>
     );
   }
   if (type === 'ExternalLink') {
     return (
-      <a className={buttonClassName} href={to} target="_blank" rel="noreferrer">
-        {text_fr}
+      <a
+        className={buttonClassName}
+        href={!disabled && to}
+        aria-label={alt_text}
+        aria-disabled={disabled}
+        target="_blank"
+        rel="noreferrer"
+        disabled={disabled}
+      >
+        {!disabled ? text_fr : alternative_content}
       </a>
     );
   }
   if (type === 'button') {
-    return <button className={buttonClassName}>{text_fr}</button>;
+    return (
+      <button
+        className={buttonClassName}
+        disabled={disabled}
+        aria-label={alt_text}
+      >
+        {text_fr}
+      </button>
+    );
   }
-  return <button className={buttonClassName}>{text_fr}</button>;
-  //   return <button className={`btn`}>{text_fr}</button>;
+  return (
+    <button className={buttonClassName} disabled={disabled}>
+      {text_fr}
+    </button>
+  );
 };
 export default Button;
