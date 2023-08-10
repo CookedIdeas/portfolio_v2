@@ -7,7 +7,8 @@ const RefLogos = ({ project }) => {
   const { dark } = useGlobalContext();
   const { basic_name } = project;
 
-  const logosContainerStyle = 'w-1/3 h-auto';
+  const logosContainerStyle =
+    'w-full sm:w-2/3 h-auto order-2 lg:order-1 flex flex-row justify-center gap-8 lg:flex-col';
 
   if (basic_name === 'bobee') {
     return (
@@ -16,11 +17,13 @@ const RefLogos = ({ project }) => {
           <StaticImage
             src="../../../1_assets/images/projects_logos/bobeebot_project_logo_dark.png"
             alt="logo bobeebot"
+            class="w-1/2  lg:w-full"
           />
         ) : (
           <StaticImage
             src="../../../1_assets/images/projects_logos/bobeebot_project_logo_light.png"
             alt="logo bobeebot"
+            class="w-1/2 lg:w-full"
           />
         )}
       </div>
@@ -33,16 +36,19 @@ const RefLogos = ({ project }) => {
         <StaticImage
           src="../../../1_assets/images/projects_logos/lelabrh.png"
           alt="logo client 1"
+          class="w-full lg:w-full"
         />
         {dark ? (
           <StaticImage
             src="../../../1_assets/images/projects_logos/vivatech_2023_dark.png"
             alt="logo bobeebot"
+            class="w-1/2 lg:w-full"
           />
         ) : (
           <StaticImage
             src="../../../1_assets/images/projects_logos/vivatech_2023_light.png"
             alt="logo bobeebot"
+            class="w-1/2 lg:w-full"
           />
         )}
       </div>

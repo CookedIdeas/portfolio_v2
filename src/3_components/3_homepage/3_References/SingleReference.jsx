@@ -4,7 +4,7 @@ import ReferenceInformation from './ReferenceInformation';
 import { graphql, useStaticQuery } from 'gatsby';
 import RefLogos from './RefLogos';
 
-const Reference = ({ project }) => {
+const SingleReference = ({ project }) => {
   const data = useStaticQuery(projectImageQuery);
   const imagesArray = data.allFile.edges;
   const [thisProjectImages, setThisProjectImages] = useState([]);
@@ -17,16 +17,18 @@ const Reference = ({ project }) => {
   }, [project]);
 
   return (
-    <div className="w-full h-auto flex items-stretch">
-      <div className="w-2/3  flex flex-col gap-4 py-6 justify-between items-center">
-        <RefLogos project={project} />
+    <div className="w-full h-auto flex flex-col lg:flex-row items-center lg:items-stretch">
+      <div className="w-full px-4 lg:w-2/3  flex flex-col-reverse sm:flex-row lg:flex-col gap-8 lg:gap-4 lg:px-0 lg:py-6 justify-around lg:justify-between items-center">
+        <div className="hidden lg:flex  w-full  justify-center">
+          <RefLogos project={project} />
+        </div>
         <ReferenceCarousel project={project} imagesArray={thisProjectImages} />
       </div>
       <ReferenceInformation project={project} />
     </div>
   );
 };
-export default Reference;
+export default SingleReference;
 
 const projectImageQuery = graphql`
   query {

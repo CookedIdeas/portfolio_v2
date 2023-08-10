@@ -5,7 +5,10 @@ import { Carousel } from 'react-responsive-carousel';
 
 const ReferenceCarousel = ({ imagesArray, project }) => {
   return (
-    <div className="ml-4 h-2/3 z-0 relative rounded-l-md overflow-hidden  max-w-[30rem] w-full shadow-md">
+    <div
+      className="max-h-2/3 z-0 relative rounded-t-md lg:rounded-tr-none lg:rounded-l-md overflow-hidden  max-w-[30rem] w-full shadow-md 
+    order-1 lg:order-2"
+    >
       <Carousel
         showThumbs={false}
         ariaLabel={`carousel of ${project.title} project`}

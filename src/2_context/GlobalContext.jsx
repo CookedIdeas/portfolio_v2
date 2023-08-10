@@ -47,15 +47,15 @@ class GlobalProvider extends React.Component {
   };
 
   closeNavHeader = (isTimeOut) => {
+    console.log('clicked');
     let isNavHeaderOpen = this.state.isNavHeaderOpen;
     if (isNavHeaderOpen) {
       isNavHeaderOpen = !this.state.isNavHeaderOpen;
-
       // optional settimeout for click on anchorLinks in NavHeader
       if (isTimeOut) {
         setTimeout(() => {
           this.setState({ isNavHeaderOpen });
-        }, 400);
+        }, isTimeOut);
       } else {
         this.setState({ isNavHeaderOpen });
       }

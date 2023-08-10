@@ -1,0 +1,41 @@
+/* 
+START OF HEADER CSS
+ */
+
+:root {
+  --header-height: 8;
+  --header-bg-opacity: 1;
+  --header-content-opacity: 1;
+}
+
+.header {
+  height: calc(4 * 1rem);
+  transition: height 0.5s;
+}
+
+.logo {
+  height: calc(4 * 0.7 * 1rem);
+  z-index: 2;
+  transition: height 0.5s;
+}
+
+.header__insideOverlay {
+  opacity: var(--header-bg-opacity);
+  @apply bg-secondaryBackground-light dark:bg-secondaryBackground-dark;
+  transition: opacity 0.5s;
+}
+
+.header__insideContent {
+  opacity: var(--header-content-opacity);
+  transition: opacity 0.5s;
+}
+
+// .gradientLine {
+//   left: 50%;
+//   transform: translateX(-50%);
+//   opacity: calc(var(--header-bg-opacity) + 0.2);
+//   width: calc(100% * (var(--header-bg-opacity) + 0.3));
+//   /* max-width: 80%; */
+//   @apply bg-gradient-to-r from-transparent via-primary-light  to-transparent dark:from-secondaryBackground-dark dark:via-secondaryBackground-dark dark:to-secondaryBackground-dark;
+//   transition: all 0.5s;
+// }

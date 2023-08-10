@@ -9,32 +9,8 @@ import { Link } from 'gatsby';
 import GradientLine from '../../99_smallReusable/GradientLine';
 import ThemeSwitch from './ThemeSwitch';
 
-const Sidebar = () => {
-  const [isSidebarInFooter, setIsSidebarInFooter] = useState(false);
-  const [isSidebarInHero, setIsSidebarInHero] = useState(true);
-
+const Sidebar = ({ isSidebarInHero, isSidebarInFooter }) => {
   const { dark } = useGlobalContext();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const footerHeight = 160;
-      const clientScreenHeight = document.documentElement.clientHeight;
-      const topScrollPosition = document.documentElement.scrollTop;
-      topScrollPosition > clientScreenHeight
-        ? setIsSidebarInHero(false)
-        : setIsSidebarInHero(true);
-
-      const documentHeightWithoutFooter =
-        window.document.body.offsetHeight - footerHeight;
-      const bottomScrollPosition = topScrollPosition + clientScreenHeight;
-      bottomScrollPosition > documentHeightWithoutFooter
-        ? setIsSidebarInFooter(true)
-        : setIsSidebarInFooter(false);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <nav
@@ -46,7 +22,8 @@ const Sidebar = () => {
           : 'fixed top-0'
       }  left-0 w-1/4 h-screen bg-tertiaryBackground-light dark:bg-tertiaryBackground-dark homePageContent__sideBar
       flex flex-col items-center justify-between
-      py-4`}
+      py-4
+      `}
     >
       <div className="h-16 w-full flex justify-center">
         {dark ? (

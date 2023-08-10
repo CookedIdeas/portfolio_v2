@@ -20,11 +20,11 @@ const Button = ({ type, text_fr, to, additionalClassName = 'w-auto' }) => {
       />
     );
   }
-  if (type === 'Link') {
+  if (type === 'ExternalLink') {
     return (
-      <Link className={buttonClassName} to={to}>
+      <a className={buttonClassName} href={to} target="_blank">
         {text_fr}
-      </Link>
+      </a>
     );
   }
   return <button className={buttonClassName}>{text_fr}</button>;

@@ -11,6 +11,8 @@ import Recommandations from '../3_components/3_homepage/Recommandations';
 import WorkProcess from '../3_components/3_homepage/WorkProcess';
 import Skills from '../3_components/3_homepage/Skills';
 import Contact from '../3_components/3_homepage/Contact';
+import Header from '../3_components/2_layouts/1_navigation/Header';
+import { useState } from 'react';
 
 const IndexPage = () => {
   const { dark, closeNavHeader } = useGlobalContext();
@@ -20,15 +22,39 @@ const IndexPage = () => {
       closeNavHeader(false);
     };
     document
-      .getElementById('index_content')
+      .getElementById('main_content')
       .addEventListener('click', handleClick);
     return () => {
       document
-        .getElementById('index_content')
+        .getElementById('main_content')
         .removeEventListener('click', handleClick);
     };
   });
-  //
+
+  // nav (sidebar and header) from absolute to fixed positions
+  const [isSidebarInFooter, setIsSidebarInFooter] = useState(false);
+  const [isSidebarInHero, setIsSidebarInHero] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const footerHeight = 160;
+      const clientScreenHeight = document.documentElement.clientHeight;
+      const topScrollPosition = document.documentElement.scrollTop;
+      topScrollPosition > clientScreenHeight
+        ? setIsSidebarInHero(false)
+        : setIsSidebarInHero(true);
+
+      const documentHeightWithoutFooter =
+        window.document.body.offsetHeight - footerHeight;
+      const bottomScrollPosition = topScrollPosition + clientScreenHeight;
+      bottomScrollPosition > documentHeightWithoutFooter
+        ? setIsSidebarInFooter(true)
+        : setIsSidebarInFooter(false);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div
       className={`${dark ? 'dark' : ''} bg-background-light
@@ -37,11 +63,19 @@ const IndexPage = () => {
       <Hero />
 
       <div id="index_content" className="relative">
-        <Sidebar />
+        <Header isSidebarInHero={isSidebarInHero} />
+        <Sidebar
+          isSidebarInFooter={isSidebarInFooter}
+          isSidebarInHero={isSidebarInHero}
+        />
+
         <main
+          id="main_content"
           className="min-h-screen
         flex flex-col gap-20
-       
+       px-8 md:px-[5%]
+       py-8 md:py-0
+
         overflow-x-hidden
         homePageContent__main
         bg-background-light

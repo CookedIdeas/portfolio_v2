@@ -10,7 +10,7 @@ const Introduction = () => {
   return (
     <section
       className="
-      flex items-center flex-col sm:flex-row gap-16 justify-start
+      flex items-center flex-col lg:flex-row gap-8 lg:gap-16 justify-start mt-8 md:mt-0
       min-h-35"
       id="introduction_section"
     >
@@ -32,7 +32,7 @@ const Introduction = () => {
           <CircleBottom className="avatar__circle avatar__circle--bottom" />
         </div>
       </div>
-      <div className="order-2 sm:order-1 sm:w-4/5 h-4/5 flex flex-col justify-between self-end">
+      <div className="order-2 sm:order-1 lg:w-4/5 h-4/5 flex flex-col justify-between self-end gap-4">
         <p>
           Je vous accompagne dans le développement des différents éléments de
           votre Saas.
@@ -61,7 +61,7 @@ const Introduction = () => {
           Reconverti dans le développement web, j’ai été entrepreneur. Mais
           aussi barman, coordinateur d’association, technicien de laboratoire...
         </p>
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4 flex-col sm:flex-row">
           <Button
             text_fr={'En savoir plus'}
             type={'Anchor'}

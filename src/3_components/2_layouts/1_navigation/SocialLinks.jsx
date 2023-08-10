@@ -2,7 +2,6 @@ import React from 'react';
 import { socialLinks } from '../../../1_assets/datas/socialLinks.js';
 
 const SocialLinks = ({ forSidebar }) => {
-  console.log(socialLinks);
   return (
     <div
       className={`flex items-center justify-center ${
@@ -15,7 +14,9 @@ const SocialLinks = ({ forSidebar }) => {
         return (
           <a
             key={id}
-            className="text-primary-light dark:text-darkGreen h-8 w-8  fill-primary-light dark:fill-primary-dark"
+            className={`text-primary-light dark:text-darkGreen ${
+              forSidebar ? 'h-8 w-8' : 'h-10 w-10'
+            }  fill-primary-light dark:fill-primary-dark`}
             aria-label={alt_fr}
             href={url}
             rel="noreferrer"
