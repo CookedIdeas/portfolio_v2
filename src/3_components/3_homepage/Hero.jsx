@@ -71,4 +71,4 @@ const Hero = () => {
   );
 };
 
-export default StyledHero;
+export default Hero;
