@@ -2,6 +2,44 @@ p {
   @apply text-sm;
 }
 
-* {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
   @apply dark:text-white text-[#121212];
+}
+
+p,
+span,
+a {
+  @apply dark:font-light;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-lg;
+}
+
+h4 {
+  @apply text-base;
+}
+
+.outlined-text {
+  -webkit-animation: fill 0.5s infinite alternate;
+  &--dark {
+    -webkit-text-stroke: 0.4px white;
+    -webkit-text-fill-color: black;
+  }
+  &--light {
+    -webkit-text-stroke: 0.7px black;
+    -webkit-text-fill-color: white;
+  }
 }

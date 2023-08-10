@@ -1,11 +1,9 @@
 import React from 'react';
-
 import { useGlobalContext } from '../../2_context/GlobalContext';
 import { useSiteMetadata } from '../../4_customHooks/useSiteMetadata';
-// import image from '../../../public/';
 
 const Seo = ({ title, description, pathname, children }) => {
-  const { lang_fr, dark } = useGlobalContext();
+  const { lang_fr } = useGlobalContext();
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -27,6 +25,7 @@ const Seo = ({ title, description, pathname, children }) => {
     <>
       <html lang={lang_fr ? 'fr' : 'eng'} />
       <title>{seo.title + ' | Gabriel G. Web Developer'}</title>
+      <meta name="color-scheme" content="dark light"></meta>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta

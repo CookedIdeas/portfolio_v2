@@ -1,11 +1,11 @@
 import React from 'react';
-import { useGlobalContext } from '../../2_context/GlobalContext';
-// import { ReactComponent as Avatar } from '../../&8assets/images/avatar/avatar.svg';
 import { ReactComponent as CircleBottom } from '../../1_assets/images/avatar/circle_bottom_thin.svg';
 import AvatarPng from './2_Introduction/AvatarPng';
+import Button from '../99_smallReusable/Button';
+import { useGlobalContext } from '../../2_context/GlobalContext';
 
 const Introduction = () => {
-  const { lang_fr } = useGlobalContext();
+  const { dark } = useGlobalContext();
 
   return (
     <section
@@ -32,21 +32,47 @@ const Introduction = () => {
           <CircleBottom className="avatar__circle avatar__circle--bottom" />
         </div>
       </div>
-      <div className="order-2 sm:order-1 sm:w-3/5">
-        <>
-          <p>
-            Aujourd'hui développeur web full-stack, mon premier contact avec le
-            développement web a été totalement autodidacte.
+      <div className="order-2 sm:order-1 sm:w-4/5 h-4/5 flex flex-col justify-between self-end">
+        <p>
+          Je vous accompagne dans le développement des différents éléments de
+          votre Saas.
+        </p>
+        <div className="inline">
+          <p className="inline">
+            Entrepreneur dans l’âme, je suis le créateur du Saas{' '}
           </p>
-          <p>
-            Pour poursuivre mon voyage dans ce domaine passionnant, j'ai suivi
-            cette année une formation professionnalisante chez OpenClassRooms.
+          <span className="font-['Roboto'] text-base ">
+            <span className="!font-bold">BooBee</span>
+            <span
+              className={`outlined-text !font-bold ${
+                dark ? 'outlined-text--dark' : 'outlined-text--light'
+              }`}
+            >
+              bot
+            </span>
+          </span>
+          <p className="inline">
+            , l’outil qui aide les entrepreneurs à être présents sur les réseaux
+            sociaux grâce à l’IA.
           </p>
-          <p>
-            Ce portfolio, réalisé avec Gatsby.js et Tailwind, est le fruit de
-            cet apprentissage.
-          </p>
-        </>
+        </div>
+        <p>Je suis aussi cartographe web.</p>
+        <p>
+          Reconverti dans le développement web, j’ai été entrepreneur. Mais
+          aussi barman, coordinateur d’association, technicien de laboratoire...
+        </p>
+        <div className="flex gap-4 mt-4">
+          <Button
+            text_fr={'En savoir plus'}
+            type={'Anchor'}
+            to={'/#references_section'}
+          />
+          <Button
+            text_fr={'Me contacter'}
+            type={'Anchor'}
+            to={'/#contact_section'}
+          />
+        </div>
       </div>
     </section>
   );

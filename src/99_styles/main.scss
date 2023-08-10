@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @import './base/global';
+@import './base/variables';
 @import './base/text';
 
-@import './components/sidebar';
 @import './pages/homePage';
 @import './layout/introduction';
+
+@import './components/sidebar';
+@import './components/button';

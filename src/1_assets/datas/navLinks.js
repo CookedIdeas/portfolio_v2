@@ -24,7 +24,7 @@ export const navLinks = [
     toAnchor: '/#competences_section',
   },
   {
-    id: 4,
+    id: 5,
     text_fr: 'contact',
     text_eng: 'contact',
     toAnchor: '/#contact_section',

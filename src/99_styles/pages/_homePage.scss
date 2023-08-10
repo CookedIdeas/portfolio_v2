@@ -3,7 +3,7 @@ $sidebarWidth: clamp(10rem, 25%, 15rem);
 .homePageContent {
   &__main {
     margin-left: $sidebarWidth;
-    padding: 2rem;
+    padding: 2rem 5% 2rem 5%;
   }
   &__sideBar {
     width: $sidebarWidth;

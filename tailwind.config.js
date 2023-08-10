@@ -52,6 +52,7 @@ const tailwindSettings = {
     fontFamily: {
       raleway: ['Raleway'],
       sourceCode: ['Source Code Pro'],
+      roboto: ['Roboto'],
     },
 
     // === CUSTOM COLORS === //
@@ -60,11 +61,10 @@ const tailwindSettings = {
       darkPurple: '#BB86FC',
       background: { dark: '#121212', light: '#fff' },
       secondaryBackground: { dark: '#3d3d3d', light: '#FFAF50' },
+      tertiaryBackground: { dark: '#575757', light: '#FFBA6A' },
       primary: {
         dark: '#03DAC6',
-        // rgb(3,218,198)
         light: '#333A56',
-        // rgb(51,58,86)
       },
     },
   },

@@ -1,48 +1,17 @@
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { useRef } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 const AvatarPng = () => {
   const data = useStaticQuery(avatarQuery);
   let avatarImgPath =
     data.allFile.edges[0].node.childImageSharp.gatsbyImageData;
 
-  const [loaded, setLoaded] = useState(false);
-  const ref = useRef();
-
-  const onLoad = () => {
-    setLoaded(true);
-    console.log('loaded');
-  };
-
-  // useEffect(() => {
-  //   if (ref.current && ref.current.complete) {
-  //     onLoad();
-  //   }
-  // });
-
   return (
     // <h2>img</h2>
     <div className="avatar">
-      <GatsbyImage
-        alt="imageAlt"
-        image={avatarImgPath}
-        loading="eager"
-        // ref={ref}
-        onLoad={onLoad}
-      />
+      <GatsbyImage alt="imageAlt" image={avatarImgPath} loading="eager" />
     </div>
-    // <StaticImage
-    //   alt="avatar"
-    //   image="../../assets/images/avatar/avatarPng.png"
-    //   placeholder="blurred"
-    //   layout="fixed"
-    //   width={200}
-    //   height={200}
-    // />
   );
 };
 export default AvatarPng;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SocialLinks from './SocialLinks';
 import { ReactComponent as SquaregLogoLight } from '../../../1_assets/images/logos/logo_squareG_light.svg';
 import { ReactComponent as SquaregLogoDark } from '../../../1_assets/images/logos/logo_squareG_dark.svg';
@@ -7,16 +7,11 @@ import { navLinks } from '../../../1_assets/datas/navLinks.js';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { Link } from 'gatsby';
 import GradientLine from '../../99_smallReusable/GradientLine';
-import { socialLinks } from '../../../1_assets/datas/socialLinks';
 import ThemeSwitch from './ThemeSwitch';
-// import LangChooser from './LangChooser';
-// import SocialLinks from './SocialLinks';
-// import ThemeSwitch from './ThemeSwitch';
 
 const Sidebar = () => {
   const [isSidebarInFooter, setIsSidebarInFooter] = useState(false);
   const [isSidebarInHero, setIsSidebarInHero] = useState(true);
-  const myRef = useRef();
 
   const { dark } = useGlobalContext();
 
@@ -49,7 +44,7 @@ const Sidebar = () => {
           : isSidebarInFooter
           ? 'absolute bottom-0'
           : 'fixed top-0'
-      }  left-0 w-1/4 h-screen secondary-container-bcgColor homePageContent__sideBar
+      }  left-0 w-1/4 h-screen bg-tertiaryBackground-light dark:bg-tertiaryBackground-dark homePageContent__sideBar
       flex flex-col items-center justify-between
       py-4`}
     >
@@ -64,7 +59,7 @@ const Sidebar = () => {
         {navLinks.map((link) => {
           const { id, text_fr, toAnchor } = link;
           return (
-            <li>
+            <li key={id}>
               <AnchorLink to={toAnchor} stripHash title={text_fr} />
             </li>
           );
@@ -81,19 +76,23 @@ const Sidebar = () => {
           </Link>
         </li>
       </ul>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 items-center">
         <div>
           <SocialLinks forSidebar={true} />
         </div>
         <GradientLine />
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 items-center font-light text-xs">
           <span>Changer le thème</span>
           <div className="w-3/4 flex gap-2 items-start justify-center">
-            <span>Dark</span>
+            <span className={`${dark ? 'font-normal' : 'opacity-80'}`}>
+              Dark
+            </span>
             <div className="w-1/2">
               <ThemeSwitch forSidebar={true} />
             </div>
-            <span>Light</span>
+            <span className={`${!dark ? 'font-normal' : 'opacity-70'}`}>
+              Light
+            </span>
           </div>
         </div>
       </div>

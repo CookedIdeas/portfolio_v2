@@ -34,7 +34,7 @@ const ThemeSwitch = ({ forSidebar }) => {
       <span
         className={`w-11 h-6 bg-primary-light dark:bg-primary-dark peer-focus:outline-none rounded-full peer flex peer-checked:after:translate-x-full  after:content-[''] after:absolute ${
           forSidebar ? 'after:top-[2px]' : 'after:top-[5px]'
-        }  after:left-[2px] dark:after:bg-secondaryBgc-dark after:bg-secondaryBackground-light after:rounded-full after:h-5 after:w-5 after:transition-all`}
+        }  after:left-[2px] dark:after:bg-secondaryBackground-dark after:bg-secondaryBackground-light after:rounded-full after:h-5 after:w-5 after:transition-all`}
       >
         {dark ? (
           <BsFillMoonFill
