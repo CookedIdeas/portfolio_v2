@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const SingleRecommandation = ({ reco, faceImg }) => {
   const { fullName, position, company, verbatim } = reco;
   return (
-    <Wrapper className="p-5 bg-white rounded-lg flex flex-col gap-4 lg:w-1/2 h-full">
+    <Wrapper className="p-5 bg-white rounded-lg flex flex-col gap-4 lg:w-1/2 h-full drop-shadow-lg">
       <div className="flex flex-col sm:flex-row items-center gap-4 pl-4">
         <div className="rounded-full overflow-hidden w-20">
           {faceImg.length > 0 && (

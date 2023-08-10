@@ -9,7 +9,7 @@
 }
 
 .input {
-  @apply bg-tertiaryBackground-light dark:bg-secondaryBackground-dark dark:focus:bg-tertiaryBackground-dark rounded-lg border outline-0 border-primary-light dark:border-0 text-black dark:text-white text-lg h-full w-full px-5;
+  @apply bg-light-600 focus:bg-white dark:bg-secondaryBackground-dark dark:focus:bg-tertiaryBackground-dark rounded-lg border outline-0  text-black border-0 dark:text-white text-lg h-full w-full px-5 focus:border-2 dark:focus:border;
   &--textarea {
     @apply py-3;
   }
@@ -17,7 +17,7 @@
 
 .cut {
   @apply invisible bg-primary-light dark:bg-darkPurple
-  rounded-full
+  rounded-full 
   absolute h-6 left-5 -top-5 w-20
   transition-transform duration-200;
 }
@@ -37,7 +37,7 @@
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  @apply -translate-y-7 translate-x-2 scale-75;
+  @apply -translate-y-7 translate-x-2 scale-75 text-white dark:text-black;
   /* TO ADJUST */
 }
 

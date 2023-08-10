@@ -7,11 +7,11 @@ const Skills = () => {
   const yo = skills.filter((data) => data.type === 'frontend');
   console.log(yo);
   return (
-    <section className="min-h-35 flex flex-col gap-12">
+    <section className="min-h-35 flex flex-col gap-12" id="competences_section">
       <h2>Mes compétences</h2>
       <div className="flex flex-col gap-8 px-2">
         <div className={domainStyle}>
-          <h4>Développement web</h4>
+          <h3>Développement web</h3>
           <p>
             2023 - Diplôme Développeur Web validant mes compétences acquises en
             autoformation.{' '}
@@ -41,7 +41,7 @@ const Skills = () => {
         </div>
         {/* ENTREPRENEURIAT */}
         <div className={domainStyle}>
-          <h4>Entrepreneuriat</h4>
+          <h3>Entrepreneuriat</h3>
           <p>
             2023 - Création du Saas BobeeBot, une solution de génération de
             contenu et de publication automatisée sur les réseaux sociaux.
@@ -63,7 +63,7 @@ const Skills = () => {
         </div>
         {/* VIE d'AVANT */}
         <div className={domainStyle}>
-          <h4>Ma vie d'avant</h4>
+          <h3>Ma vie d'avant</h3>
           <p>
             Coordinateur de la vie associative et des actions de terrains dans
             une association lyonnaise (4 ans).

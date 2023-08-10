@@ -11,11 +11,14 @@ const Contact = () => {
       className="min-h-35 flex flex-col gap-12 mb-8 items-center"
     >
       <h2 className="self-start">Contactez-moi</h2>
+      <p className="self-start text-start">
+        Pour savoir si je suis disponible, prenez contact avec moi.
+      </p>
       <form
         action="https://formspree.io/f/xyyalloy"
         method="POST"
         target="_blank"
-        className="flex flex-col gap-6 sm:w-4/5 lg:w-full xl:w-4/5 2xl:2/3 "
+        className="flex flex-col gap-6 w-full sm:w-4/5 lg:w-full xl:w-4/5 2xl:2/3 "
       >
         <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:grid-rows-2 ">
           <ContactInput

@@ -25,12 +25,13 @@ const NavHeader = ({ isPageScrollOnTop = true }) => {
               key={id}
               className="uppercase text-primary-light dark:text-darkPurple"
             >
-              <AnchorLink
+              <a href={toAnchor}>{text_fr}</a>
+              {/* <AnchorLink
                 to={toAnchor}
                 stripHash
                 title={text_fr}
                 onAnchorLinkClick={() => closeNavHeader(true)}
-              />
+              /> */}
             </li>
           );
         })}

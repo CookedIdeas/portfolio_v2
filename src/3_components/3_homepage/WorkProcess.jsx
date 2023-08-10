@@ -4,7 +4,7 @@ import Button from '../99_smallReusable/Button';
 
 const WorkProcess = () => {
   return (
-    <section className="min-h-35 flex flex-col gap-12">
+    <section className="min-h-35 flex flex-col gap-12" id="process_section">
       <h2>Mon process de travail</h2>
       <div className="flex flex-col gap-8">
         <p>
@@ -37,7 +37,7 @@ const WorkProcess = () => {
             'Je collabore fréquemment avec d’autres développeurs et UI/UX designers qui seront heureux de nous rejoindre pour ces projets ambitieux.'
           }
         />
-        <div className="w-full sm:w-5/6 md:w-[90%] bg-tertiaryBackground-light dark:bg-secondaryBackground-dark p-4 self-center text-center rounded-md ">
+        <div className="w-full sm:w-5/6 md:w-[90%] secondary-container-bcgColor p-4 self-center text-center rounded-md ">
           <p className="!text-base !text-center mb-2">
             Mon souhait est de travailler dans une ambiance de collaboration
             agréable.

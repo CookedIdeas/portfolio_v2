@@ -1,6 +1,5 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { image } from '../../../1_assets/images/projects_logos/bobeebot_project_logo_light.png';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
 
 const RefLogos = ({ project }) => {

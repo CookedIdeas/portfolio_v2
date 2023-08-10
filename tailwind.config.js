@@ -67,6 +67,9 @@ const tailwindSettings = {
         dark: '#03DAC6',
         light: '#333A56',
       },
+      light: {
+        600: '#FFD19B',
+      },
     },
   },
 };

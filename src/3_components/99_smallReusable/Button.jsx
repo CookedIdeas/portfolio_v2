@@ -8,13 +8,13 @@ const Button = ({ type, text_fr, to, additionalClassName = 'w-auto' }) => {
 
   const buttonClassName = `${
     dark ? 'btn btn--dark ' : 'btn'
-  } ${additionalClassName} rounded-full font-semibold !text-[#121212] !font-normal flex items-center justify-center`;
+  } ${additionalClassName} rounded-full border dark:border-0 font-semibold !text-[#121212] !font-normal flex items-center justify-center`;
 
   if (type === 'Anchor') {
     return (
-      <AnchorLink className={buttonClassName} to={to} stripHash>
+      <a className={buttonClassName} href={to}>
         {text_fr}
-      </AnchorLink>
+      </a>
     );
   }
   if (type === 'ExternalLink') {
