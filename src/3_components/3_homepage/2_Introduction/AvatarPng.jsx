@@ -29,7 +29,7 @@ const avatarQuery = graphql`
           childImageSharp {
             gatsbyImageData(
               placeholder: DOMINANT_COLOR
-              width: 1000
+              width: 300
               layout: CONSTRAINED
               quality: 100
               formats: WEBP

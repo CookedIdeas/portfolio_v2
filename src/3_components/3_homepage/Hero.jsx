@@ -25,7 +25,7 @@ const Hero = () => {
                   placeholder: DOMINANT_COLOR
                   width: 1000
                   layout: CONSTRAINED
-                  quality: 100
+                  quality: 90
                   formats: WEBP
                 )
               }
