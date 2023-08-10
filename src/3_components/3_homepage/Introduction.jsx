@@ -37,7 +37,7 @@ const Introduction = () => {
           Je vous accompagne dans le développement des différents éléments de
           votre Saas.
         </p>
-        <div className="inline">
+        <div className="inline text-center sm:text-start">
           <p className="inline">
             Entrepreneur dans l’âme, je suis le créateur du Saas{' '}
           </p>

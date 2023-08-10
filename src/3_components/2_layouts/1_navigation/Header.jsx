@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { ReactComponent as SquaregLogoLight } from '../../../1_assets/images/logos/logo_squareG_light.svg';
 import { ReactComponent as SquaregLogoDark } from '../../../1_assets/images/logos/logo_squareG_dark.svg';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
-import { changeCssVariable } from '../../../5_utils/utils';
 import BurgerMenu from './BurgerMenu';
 import NavHeader from './NavHeader';
 
@@ -23,7 +22,7 @@ const Header = ({ isSidebarInHero }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  });
 
   return (
     <header

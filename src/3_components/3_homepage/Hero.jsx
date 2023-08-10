@@ -1,6 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Button from '../99_smallReusable/Button';
+import { IconContext } from 'react-icons';
+import { BsFillArrowDownCircleFill } from 'react-icons/bs';
 
 const Hero = () => {
   const data = useStaticQuery(
@@ -52,7 +55,7 @@ const Hero = () => {
           display: 'grid',
         }}
       >
-        <div className="flex flex-col gap-4 items-center justify-center h-full justify-center md:pt-28">
+        <div className="flex flex-col gap-4 items-center justify-center h-full justify-center md:pt-28  text-center">
           <h1 className="font-semibold text-5xl md:mb-4 !text-white">
             Gabriel Gourcerol
           </h1>
@@ -62,6 +65,20 @@ const Hero = () => {
               spécialisé solutions Saas
             </span>
           </h3>
+          <div className="mt-8">
+            <Button
+              type={'Anchor'}
+              to={'/#introduction_section'}
+              text_fr={
+                <IconContext.Provider
+                  value={{ size: '1.4rem' }}
+                  className="pointer-events-none"
+                >
+                  <BsFillArrowDownCircleFill className="pointer-events-none" />
+                </IconContext.Provider>
+              }
+            />
+          </div>
         </div>
       </div>
     </div>

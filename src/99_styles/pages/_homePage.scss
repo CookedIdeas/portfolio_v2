@@ -20,3 +20,7 @@ $sidebarWidth: clamp(8rem, 25%, 15rem);
     }
   }
 }
+
+.skills-gradient {
+  @apply bg-gradient-to-r dark:from-alternativeBackground-dark dark:via-alternativeBackground-dark dark:via-70% dark:to-tertiaryBackground-dark;
+}

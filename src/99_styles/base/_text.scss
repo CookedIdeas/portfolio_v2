@@ -20,8 +20,13 @@ a {
   @apply dark:font-light;
 }
 
+p,
+div > p {
+  @apply text-center sm:text-start;
+}
+
 h2 {
-  @apply text-2xl;
+  @apply text-2xl scroll-mt-8;
 }
 
 h3 {

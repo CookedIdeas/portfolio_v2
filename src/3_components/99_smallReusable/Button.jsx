@@ -12,20 +12,20 @@ const Button = ({ type, text_fr, to, additionalClassName = 'w-auto' }) => {
 
   if (type === 'Anchor') {
     return (
-      <AnchorLink
-        className={buttonClassName}
-        to={to}
-        stripHash
-        title={text_fr}
-      />
+      <AnchorLink className={buttonClassName} to={to} stripHash>
+        {text_fr}
+      </AnchorLink>
     );
   }
   if (type === 'ExternalLink') {
     return (
-      <a className={buttonClassName} href={to} target="_blank">
+      <a className={buttonClassName} href={to} target="_blank" rel="noreferrer">
         {text_fr}
       </a>
     );
+  }
+  if (type === 'button') {
+    return <button className={buttonClassName}>{text_fr}</button>;
   }
   return <button className={buttonClassName}>{text_fr}</button>;
   //   return <button className={`btn`}>{text_fr}</button>;

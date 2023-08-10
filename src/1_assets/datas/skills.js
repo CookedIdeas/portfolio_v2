@@ -1,60 +1,58 @@
 export const skills = [
   {
-    id: 1,
-    title_fr: 'Gestion de projet',
-    title_eng: 'Project management',
-    content_fr: [
-      'Cadrer un projet selon les attentes du client et son budget',
-      'Faire avancer et évoluer le projet en lien avec le client',
-      'Rédiger des spécifications fonctionnelles et techniques, savoir justifier les choix réalisé',
-      'Découper un projet en une succession de tâches simples',
-      "Organiser et planifier un projet avec l'aide d'un backlog et d'un Kanban",
-    ],
-    content_eng: [
-      "Frame a project according to the client's expectations and budget",
-      'Make a project progress and evolve with continuous communication with the client',
-      'Write functional and technical specifications, knowing how to justify the choices made',
-      'Break down a project into a succession of simple tasks',
-      'Organize and plan a project with the help of a backlog and a Kanban',
+    type: 'frontend',
+    skills: [
+      'Design : Figma, Adobe Illustrator',
+      'React.js, Gatsby.js',
+      'Scss, Tailwindcss',
     ],
   },
   {
-    id: 2,
-    title_fr: 'Frontend',
-    title_eng: 'Frontend',
-    content_fr: [
-      "Design : maitrise d'Adobe Illustrator, débutant sur Figma",
-      'Langages :',
-      ['Intermédiaire : React.js et javascript', 'Débutant : Gatsby.js'],
-      'Feuillets de styles : CSS, SCSS, Tailwindcss',
-    ],
-    content_eng: [
-      'Design: efficient with Adobe Illustrator, beginner on Figma',
-      'Languages :',
-      [
-        'Intermediate: React.js and javascript',
-        'Beginner: Gatsby.js',
-        'Style sheets : CSS, SCSS, Tailwindcss',
-      ],
+    type: 'backend',
+    skills: [
+      'Nodejs, Express, MongoDB',
+      'Sécurisation backend (OWASP Top 10)',
+      'Head less CMS (Strapi)',
     ],
   },
   {
-    id: 3,
-    title_fr: 'Backend',
-    title_eng: 'Backend',
-    content_fr: [
-      'Langages : Node.js',
-      'Stack : Express, MongoDB',
-      'Développer une API CRUD',
-      'Utiliser des head less CMS (Contentful, Strapi)',
-      "Développer un backend sécurisé en prenant en compte les risques de l'OWASP Top 10",
+    type: 'Gestion de projets web',
+    skills: [
+      'Méthodologie Agile',
+      'Rédaction spécifications techniques',
+      'Rédaction spécifications fonctionnelles',
     ],
-    content_eng: [
-      'Languages : Node.js',
-      'Stack: Express, MongoDB',
-      'Developing a CRUD API',
-      'Using head less CMS (Contentful, Strapi)',
-      'Developing a secure backend taking into account the OWASP Top 10 risks',
+  },
+  {
+    type: 'Solutions Saas',
+    skills: ['Gestion utilisateurs', 'Paiements / abonnements', 'Mailing'],
+  },
+  {
+    type: 'Cartographie web',
+    skills: ['Leafletjs, ReactLeaflet', 'Système d’Information Géographique'],
+  },
+  {
+    type: 'entrepreneuriat',
+    skills: [
+      'Gestion de projets entrepreneuriaux',
+      'Facturation, gestion financière',
+      'Démarchage commercial',
+      'Relation clients',
+      'Vision stratégique',
+      'Capacité d’adaptation',
+      'Droit des sociétés',
+      'Auto-organisation',
+    ],
+  },
+  {
+    type: "Ma vie d'avant",
+    skills: [
+      'Rigueur',
+      'Gestion d’équipe',
+      'Évolution en environnement stressant',
+      'Priorisation des tâches',
+      'Rigueur et maitrise de soi',
+      'Faire des supers cocktails',
     ],
   },
 ];

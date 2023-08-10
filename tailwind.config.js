@@ -62,6 +62,7 @@ const tailwindSettings = {
       background: { dark: '#121212', light: '#fff' },
       secondaryBackground: { dark: '#3d3d3d', light: '#FFAF50' },
       tertiaryBackground: { dark: '#575757', light: '#FFBA6A' },
+      alternativeBackground: { dark: '#3f3f3f', light: '#FFBA6A' },
       primary: {
         dark: '#03DAC6',
         light: '#333A56',
