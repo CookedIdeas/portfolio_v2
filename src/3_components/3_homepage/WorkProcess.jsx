@@ -6,7 +6,7 @@ const WorkProcess = () => {
   return (
     <section className="min-h-35 flex flex-col gap-12" id="process_section">
       <h2>Mon process de travail</h2>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         <p>
           Tout d’abord, je prends le temps qu’il faut pour bien comprendre votre
           besoin.
