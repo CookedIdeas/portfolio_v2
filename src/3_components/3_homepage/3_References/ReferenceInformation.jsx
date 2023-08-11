@@ -20,7 +20,7 @@ const ReferenceInformation = ({ project }) => {
   const partClass = 'inline';
 
   return (
-    <div className="secondary-container-bcgColor p-6 mt-[-0.5rem] lg:mt-0 z-10 rounded-md shadow-md flex flex-col gap-4 w-full items-start justify-between relative">
+    <div className="secondary-container-bcgColor p-6 mt-[-0.5rem] lg:mt-0 z-10 rounded-md shadow-lg flex flex-col gap-4 w-full items-start justify-between relative">
       <div className="flex lg:hidden w-full justify-center">
         <RefLogos project={project} />
       </div>

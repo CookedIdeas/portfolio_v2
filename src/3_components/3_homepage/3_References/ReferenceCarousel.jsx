@@ -13,7 +13,7 @@ const ReferenceCarousel = ({ imagesArray, project }) => {
   const chevronStyle = 'w-6 h-6 text-neutral-400';
   return (
     <div
-      className="max-h-2/3 z-0 relative rounded-t-md lg:rounded-tr-none lg:rounded-l-md overflow-hidden max-w-[30rem] lg:max-w-none w-full shadow-md 
+      className="max-h-2/3 z-0 relative rounded-t-md lg:rounded-tr-none lg:rounded-l-md overflow-hidden max-w-[30rem] lg:max-w-none w-full shadow-lg 
     order-1 lg:order-2"
     >
       {imagesArray.length > 0 && (
