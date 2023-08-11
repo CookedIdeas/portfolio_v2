@@ -1,7 +1,8 @@
 import React from 'react';
 import { socialLinks } from '../../../1_assets/datas/socialLinks.js';
+import { memo } from 'react';
 
-const SocialLinks = ({ forSidebar }) => {
+const SocialLinks = memo(function SocialLinks({ forSidebar }) {
   return (
     <div
       className={`flex items-center justify-center ${
@@ -28,5 +29,5 @@ const SocialLinks = ({ forSidebar }) => {
       })}
     </div>
   );
-};
+});
 export default SocialLinks;

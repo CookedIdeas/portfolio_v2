@@ -1,11 +1,10 @@
 import React from 'react';
 import DomainSkills from './6_Skills/DomainSkills';
-import { skills } from '../../1_assets/datas/skills';
+import { skills_2 } from '../../1_assets/datas/skills_2';
 
 const Skills = () => {
   const domainStyle = 'flex flex-col gap-6 [&>p]:!text-start';
-  const yo = skills.filter((data) => data.type === 'frontend');
-  console.log(yo);
+
   return (
     <section className="min-h-35 flex flex-col gap-12" id="competences_section">
       <h2>Mes compétences</h2>
@@ -21,22 +20,24 @@ const Skills = () => {
             autodidacte.
           </p>
           <DomainSkills
-            title={'frontend'}
-            skillsData={skills.filter((data) => data.type === 'frontend')}
+            title={skills_2.frontend.title}
+            skillsData={skills_2.frontend.skills}
           />
           <DomainSkills
-            title={'backend'}
-            skillsData={skills.filter((data) => data.type === 'backend')}
+            title={skills_2.backend.title}
+            skillsData={skills_2.backend.skills}
           />
           <DomainSkills
-            title={'Gestion de projets web'}
-            skillsData={skills.filter(
-              (data) => data.type === 'Gestion de projets web'
-            )}
+            title={skills_2.saasSolutions.title}
+            skillsData={skills_2.saasSolutions.skills}
           />
           <DomainSkills
-            title={'Solutions Saas'}
-            skillsData={skills.filter((data) => data.type === 'Solutions Saas')}
+            title={skills_2.webProjectManagement.title}
+            skillsData={skills_2.webProjectManagement.skills}
+          />
+          <DomainSkills
+            title={skills_2.webMapping.title}
+            skillsData={skills_2.webMapping.skills}
           />
         </div>
         {/* ENTREPRENEURIAT */}
@@ -56,9 +57,7 @@ const Skills = () => {
           </p>
           <DomainSkills
             title={''}
-            skillsData={skills.filter(
-              (data) => data.type === 'entrepreneuriat'
-            )}
+            skillsData={skills_2.businessManagement.skills}
           />
         </div>
         {/* VIE d'AVANT */}
@@ -73,10 +72,7 @@ const Skills = () => {
             station (7 ans).
           </p>
           <p>Titulaire d'un Master 2 Chimie de l’environnement.</p>
-          <DomainSkills
-            title={''}
-            skillsData={skills.filter((data) => data.type === "Ma vie d'avant")}
-          />
+          <DomainSkills title={''} skillsData={skills_2.beforeLife.skills} />
         </div>
       </div>
     </section>

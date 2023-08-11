@@ -25,16 +25,20 @@ div > p {
   @apply text-center sm:text-start;
 }
 
+p {
+  @apply lg:text-base;
+}
+
 h2 {
-  @apply text-2xl scroll-mt-8;
+  @apply text-2xl scroll-mt-8 lg:text-3xl;
 }
 
 h3 {
-  @apply text-lg font-normal;
+  @apply text-lg font-normal lg:text-xl;
 }
 
 h4 {
-  @apply text-base;
+  @apply text-base lg:text-lg;
 }
 
 .outlined-text {

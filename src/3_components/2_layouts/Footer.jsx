@@ -16,17 +16,27 @@ const Footer = () => {
       <p className="text-center">
         Made with{' '}
         {
-          <a href="https://www.gatsbyjs.com/" rel="noreferrer" target="_blank">
+          <a
+            href="https://www.gatsbyjs.com/"
+            rel="noreferrer"
+            target="_blank"
+            className="hover:underline"
+          >
             <GatsbyLogo
               alt="gatsby js logo"
-              className="h-4 inline -translate-y-[3px]"
+              className="h-4 inline -translate-y-[3px] "
             />{' '}
             Gatsby
           </a>
         }
         ,{' '}
         {
-          <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
+          <a
+            href="https://tailwindcss.com/"
+            rel="noreferrer"
+            target="_blank"
+            className="hover:underline"
+          >
             <TailwindLogo
               alt="tailwind css logo"
               className="h-5 inline -translate-y-[2px]"

@@ -10,6 +10,7 @@ const ContactInput = ({ type, inputName, placeHolder, cutWidth }) => {
           type="text"
           name={inputName}
           placeholder=" "
+          required
         />
         <div
           className={`cut ${inputName === 'nom' ? '!w-[75px]' : '!w-[90px]'} `}
@@ -28,6 +29,7 @@ const ContactInput = ({ type, inputName, placeHolder, cutWidth }) => {
           className="input input--textarea"
           name={inputName}
           placeholder=" "
+          required
         />
         <div className={`cut !w-[95px]`}></div>
         <label htmlFor={inputName} className="placeholder">

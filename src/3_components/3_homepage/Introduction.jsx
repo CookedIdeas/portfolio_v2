@@ -10,7 +10,7 @@ const Introduction = () => {
   return (
     <section
       className="
-      flex items-center flex-col lg:flex-row gap-8 lg:gap-16 justify-start mt-8 md:mt-0
+      flex items-center flex-col lg:flex-row gap-8 lg:gap-16 justify-start mt-8 md:mt-6
       min-h-35"
       id="introduction_section"
     >

@@ -1,38 +1,39 @@
-export const skills = [
-  {
-    type: 'frontend',
+export const skills_2 = {
+  frontend: {
+    title: 'Frontend',
     skills: [
       'Design : Figma, Adobe Illustrator',
       'React.js, Gatsby.js',
       'Scss, Tailwindcss',
     ],
   },
-  {
-    type: 'backend',
+  backend: {
+    title: 'Backend',
     skills: [
       'Nodejs, Express, MongoDB',
-      'Sécurisation backend (OWASP Top 10)',
+      'Sécurisation (OWASP Top 10)',
       'Head less CMS (Strapi)',
     ],
   },
-  {
-    type: 'Gestion de projets web',
+  webProjectManagement: {
+    title: 'Gestion de projets web',
     skills: [
       'Méthodologie Agile',
       'Rédaction spécifications techniques',
       'Rédaction spécifications fonctionnelles',
     ],
   },
-  {
-    type: 'Solutions Saas',
+
+  saasSolutions: {
+    title: 'Solutions Saas',
     skills: ['Gestion utilisateurs', 'Paiements / abonnements', 'Mailing'],
   },
-  {
-    type: 'Cartographie web',
+  webMapping: {
+    title: 'Cartographie web',
     skills: ['Leafletjs, ReactLeaflet', 'Système d’Information Géographique'],
   },
-  {
-    type: 'entrepreneuriat',
+  businessManagement: {
+    title: 'Entrepreneuriat',
     skills: [
       'Gestion de projets entrepreneuriaux',
       'Facturation, gestion financière',
@@ -44,8 +45,8 @@ export const skills = [
       'Auto-organisation',
     ],
   },
-  {
-    type: "Ma vie d'avant",
+  beforeLife: {
+    title: "Ma vie d'avant",
     skills: [
       'Rigueur',
       'Gestion d’équipe',
@@ -55,4 +56,4 @@ export const skills = [
       'Faire des supers cocktails',
     ],
   },
-];
+};

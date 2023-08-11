@@ -3,13 +3,24 @@ import Button from '../../99_smallReusable/Button';
 import RefLogos from './RefLogos';
 
 const ReferenceInformation = ({ project }) => {
-  const { title, stacks, description, link, git, disabled, gitDisabled } =
-    project;
+  const {
+    title,
+    stacks,
+    text_1_title,
+    text_1_text,
+    text_2_title,
+    text_2_text,
+    text_2_secondText,
+    link,
+    git,
+    disabled,
+    gitDisabled,
+  } = project;
 
   const partClass = 'inline';
 
   return (
-    <div className="secondary-container-bcgColor p-6 mt-[-0.5rem] lg:mt-0 z-10 relative rounded-md shadow-md flex flex-col gap-4 w-full items-start justify-between relative">
+    <div className="secondary-container-bcgColor p-6 mt-[-0.5rem] lg:mt-0 z-10 rounded-md shadow-md flex flex-col gap-4 w-full items-start justify-between relative">
       <div className="flex lg:hidden w-full justify-center">
         <RefLogos project={project} />
       </div>
@@ -24,10 +35,19 @@ const ReferenceInformation = ({ project }) => {
             </p>
           ))}
         </div>
-        <div className={partClass}>
-          <h4 className="inline">Informations supplémentaires : </h4>
-          <p className="inline">{description}</p>
-        </div>
+        {text_1_title && (
+          <div className={partClass}>
+            <h4 className="inline">{text_1_title} : </h4>
+            <p className="inline">{text_1_text}</p>
+          </div>
+        )}
+        {text_2_title && (
+          <div className={partClass}>
+            <h4 className="inline">{text_2_title} : </h4>
+            <p className="inline">{text_2_text}</p>
+            {text_2_secondText && <p className="">{text_2_secondText}</p>}
+          </div>
+        )}
       </div>
       <div className="flex gap-4 self-center flex-col sm:flex-row">
         {link && (

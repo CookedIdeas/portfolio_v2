@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
 import ThemeSwitch from './ThemeSwitch';
 import { navLinks } from '../../../1_assets/datas/navLinks';
 import SocialLinks from './SocialLinks';
 import GradientLine from '../../99_smallReusable/GradientLine';
 
-const NavHeader = ({ isPageScrollOnTop = true }) => {
+const NavHeader = memo(function NavHeader({ isPageScrollOnTop = true }) {
   const { dark, isNavHeaderOpen } = useGlobalContext();
   return (
     <nav
@@ -60,5 +60,5 @@ const NavHeader = ({ isPageScrollOnTop = true }) => {
       </ul>
     </nav>
   );
-};
+});
 export default NavHeader;

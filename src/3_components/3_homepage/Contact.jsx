@@ -12,7 +12,8 @@ const Contact = () => {
     >
       <h2 className="self-start">Contactez-moi</h2>
       <p className="self-start text-start">
-        Pour savoir si je suis disponible, prenez contact avec moi.
+        Pour savoir si je suis disponible, je vous invite à me contacter par ce
+        formulaire.
       </p>
       <form
         action="https://formspree.io/f/xyyalloy"
@@ -52,16 +53,18 @@ const Contact = () => {
           placeHolder={'Votre message'}
           cutWidth={'90px'}
         />
-        <Button
-          type={'button'}
-          text_fr={
-            <IconContext.Provider value={{ size: '1.4rem' }}>
-              <BsFillSendFill className="" />
-            </IconContext.Provider>
-          }
-          alt_text={'Envoyer le message'}
-          additionalClassName={'w-1/2 self-center'}
-        />
+        <div className="w-full self-center flex flex-col items-center gap-2">
+          <Button
+            type={'button'}
+            text_fr={
+              <IconContext.Provider value={{ size: '1.4rem' }}>
+                <BsFillSendFill className="" />
+              </IconContext.Provider>
+            }
+            alt_text={'Envoyer le message'}
+            additionalClassName={'w-1/2 self-center'}
+          />
+        </div>
       </form>
     </section>
   );

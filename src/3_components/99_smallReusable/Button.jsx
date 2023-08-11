@@ -17,32 +17,58 @@ const Button = ({
   } ${additionalClassName} rounded-full border dark:border-0 font-semibold !text-[#121212] !font-normal flex items-center justify-center`;
 
   if (type === 'Anchor') {
-    return (
-      <a
-        className={buttonClassName}
-        href={!disabled && to}
-        aria-label={alt_text}
-        aria-disabled={disabled}
-        disabled={disabled}
-      >
-        {text_fr}
-      </a>
-    );
+    if (!disabled) {
+      return (
+        <a
+          className={buttonClassName}
+          href={!disabled && to}
+          aria-label={alt_text}
+          aria-disabled={disabled}
+          disabled={disabled}
+        >
+          {text_fr}
+        </a>
+      );
+    } else {
+      return (
+        <button
+          className={buttonClassName}
+          aria-label={alt_text}
+          aria-disabled={disabled}
+          disabled={disabled}
+        >
+          {alternative_content}
+        </button>
+      );
+    }
   }
   if (type === 'ExternalLink') {
-    return (
-      <a
-        className={buttonClassName}
-        href={!disabled && to}
-        aria-label={alt_text}
-        aria-disabled={disabled}
-        target="_blank"
-        rel="noreferrer"
-        disabled={disabled}
-      >
-        {!disabled ? text_fr : alternative_content}
-      </a>
-    );
+    if (!disabled) {
+      return (
+        <a
+          className={buttonClassName}
+          href={!disabled && to}
+          aria-label={alt_text}
+          aria-disabled={disabled}
+          target="_blank"
+          rel="noreferrer"
+          disabled={disabled}
+        >
+          {!disabled ? text_fr : alternative_content}
+        </a>
+      );
+    } else {
+      return (
+        <button
+          className={buttonClassName}
+          aria-label={alt_text}
+          aria-disabled={disabled}
+          disabled={disabled}
+        >
+          {alternative_content}
+        </button>
+      );
+    }
   }
   if (type === 'button') {
     return (

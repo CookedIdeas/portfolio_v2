@@ -73,7 +73,7 @@ const IndexPage = () => {
           id="main_content"
           className="min-h-screen
         flex flex-col gap-20
-       px-4 sm:px-8 md:px-[5%]
+       px-4 sm:px-8 md:px-[4%]
        py-8 md:py-0
 
         overflow-x-hidden

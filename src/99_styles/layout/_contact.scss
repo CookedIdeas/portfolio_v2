@@ -9,7 +9,7 @@
 }
 
 .input {
-  @apply bg-light-600 focus:bg-white dark:bg-secondaryBackground-dark dark:focus:bg-tertiaryBackground-dark rounded-lg border outline-0  text-black border-0 dark:text-white text-lg h-full w-full px-5 focus:border-2 dark:focus:border;
+  @apply bg-light-600 focus:bg-white dark:bg-secondaryBackground-dark dark:focus:bg-tertiaryBackground-dark rounded-lg outline-0  text-black border-0 dark:text-white text-lg h-full w-full px-5 focus:border-2 dark:focus:border;
   &--textarea {
     @apply py-3;
   }
@@ -32,12 +32,13 @@
   absolute left-5 top-5 leading-[14px]
   transition duration-200
   origin-[0%_50%]
-  pointer-events-none;
+  pointer-events-none
+  dark:font-light;
 }
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  @apply -translate-y-7 translate-x-2 scale-75 text-white dark:text-black;
+  @apply -translate-y-7 translate-x-2 scale-75 text-white dark:text-black font-normal;
   /* TO ADJUST */
 }
 
