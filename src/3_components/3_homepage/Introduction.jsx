@@ -56,11 +56,11 @@ const Introduction = () => {
             sociaux grâce à l’IA.
           </p>
         </div>
-        <p>Je suis aussi cartographe web.</p>
+        {/* <p>Je suis aussi cartographe web.</p>
         <p>
           Reconverti dans le développement web, j’ai été entrepreneur. Mais
           aussi barman, coordinateur d’association, technicien de laboratoire...
-        </p>
+        </p> */}
         <div className="flex gap-4 mt-4 flex-col sm:flex-row">
           <Button
             text_fr={'En savoir plus'}

@@ -37,12 +37,7 @@ export const skills_2 = {
     skills: [
       'Gestion de projets entrepreneuriaux',
       'Facturation, gestion financière',
-      'Démarchage commercial',
-      'Relation clients',
-      'Vision stratégique',
       'Capacité d’adaptation',
-      'Droit des sociétés',
-      'Auto-organisation',
     ],
   },
   beforeLife: {

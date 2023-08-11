@@ -31,7 +31,7 @@ const ReferenceCarousel = ({ imagesArray, project }) => {
           renderArrowPrev={(clickHandler, hasPrev) => {
             return (
               <button
-                ariaLabel={`Voir l'image précédente du projet ${project.title}`}
+                aria-label={`Voir l'image précédente du projet ${project.title}`}
                 className={`${
                   hasPrev ? 'absolute' : 'hidden'
                 } ${chevronContainerStyle} left-0 `}
@@ -44,7 +44,7 @@ const ReferenceCarousel = ({ imagesArray, project }) => {
           renderArrowNext={(clickHandler, hasNext) => {
             return (
               <button
-                ariaLabel={`Voir l'image suivante du projet ${project.title}`}
+                aria-label={`Voir l'image suivante du projet ${project.title}`}
                 className={`${
                   hasNext ? 'absolute' : 'hidden'
                 } ${chevronContainerStyle} right-0 `}

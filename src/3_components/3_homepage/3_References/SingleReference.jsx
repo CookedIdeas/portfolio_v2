@@ -18,10 +18,13 @@ const SingleReference = ({ project }) => {
 
   return (
     <div className="w-full h-auto flex flex-col lg:flex-row items-center lg:items-stretch">
-      <div className="w-full px-4 lg:w-2/3  flex flex-col-reverse sm:flex-row lg:flex-col gap-8 lg:gap-4 lg:px-0 lg:py-6 justify-around lg:justify-between items-center">
-        <div className="hidden lg:flex  w-full  justify-center">
-          <RefLogos project={project} />
-        </div>
+      <div className="w-full px-4 lg:w-2/3 flex flex-col-reverse sm:flex-row lg:flex-col gap-8 lg:gap-4 lg:px-0 lg:py-6 justify-around lg:justify-between items-center">
+        {project.refLogos && (
+          <div className="hidden lg:flex  w-full  justify-center">
+            <RefLogos project={project} />
+          </div>
+        )}
+
         <ReferenceCarousel project={project} imagesArray={thisProjectImages} />
       </div>
       <ReferenceInformation project={project} />

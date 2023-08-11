@@ -12,9 +12,9 @@ const WorkProcess = () => {
           besoin.
         </p>
         <p>
-          Ensuite, je vous propose une solution qui répondra à vos attentes et à
-          votre budget. Je vous propose une planification rigoureuse du projet
-          afin que vous sachiez où nous allons, comment et pourquoi.{' '}
+          Ensuite, je vous propose une solution qui répondra à vos attentes. Je
+          vous propose une planification rigoureuse du projet afin que vous
+          sachiez où nous allons, comment et pourquoi.{' '}
         </p>
         <ProcessQuestion
           question={
@@ -29,14 +29,14 @@ const WorkProcess = () => {
           développement. Dans une approche agile, nous validons les différentes
           étapes et les possibles modifications à apporter en cours de projet.
         </p>
-        <ProcessQuestion
+        {/* <ProcessQuestion
           question={
             'D’autres compétences ou plus de force de travail sont nécessaires pour mener à bien le projet ?'
           }
           response={
             'Je collabore fréquemment avec d’autres développeurs et UI/UX designers qui seront heureux de nous rejoindre pour ces projets ambitieux.'
           }
-        />
+        /> */}
         <div className="w-full sm:w-5/6 md:w-[90%] secondary-container-bcgColor p-4 self-center text-center rounded-md ">
           <p className="!text-base !text-center mb-2">
             Mon souhait est de travailler dans une ambiance de collaboration
