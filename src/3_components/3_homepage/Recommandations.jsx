@@ -29,8 +29,6 @@ const query = graphql`
 const Recommandations = () => {
   const { allFile } = useStaticQuery(query);
   const facesArray = allFile.edges;
-  // console.log(facesArray);
-  // console.log(facesArray.filter((face) => face.node.name === 'rodolphe'));
   return (
     <section className="min-h-35 flex flex-col gap-12">
       <h2>Ce qu'ils disent de moi</h2>

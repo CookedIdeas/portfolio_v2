@@ -24,9 +24,6 @@ const SingleReference = ({ project }) => {
       let logos = projectsLogos.filter(
         (image) => image.node.name.split('_')[0] === project.client_basic_name
       );
-      console.log('project.client_basic_name', project.client_basic_name);
-
-      console.log('logos', logos);
       if (logos) {
         setThisProjectsClientsLogos(logos);
       }

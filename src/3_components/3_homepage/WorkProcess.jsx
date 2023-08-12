@@ -1,6 +1,7 @@
 import React from 'react';
 import ProcessQuestion from './5_WorkProcess/ProcessQuestion';
 import Button from '../99_smallReusable/Button';
+import Balancer from 'react-wrap-balancer';
 
 const WorkProcess = () => {
   return (
@@ -42,9 +43,11 @@ const WorkProcess = () => {
             Mon souhait est de travailler dans une ambiance de collaboration
             agréable.
           </p>
-          <p className="font-bold dark:!font-normal !text-base !text-center">
-            Je veux que mes clients valident leur commande en sachant que le bon
-            choix a été fait en me faisant confiance pour la développer.
+          <p className="flex justify-center">
+            <Balancer className=" font-bold dark:!font-normal !text-base !text-center">
+              Je veux que mes clients valident leur commande en sachant que le
+              bon choix a été fait en me faisant confiance pour la développer.
+            </Balancer>
           </p>
         </div>
         <div className="w-2/3 flex self-center justify-center">
