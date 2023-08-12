@@ -42,7 +42,7 @@ const Introduction = () => {
             Entrepreneur dans l’âme, je suis le créateur du Saas{' '}
           </p>
           <span className="font-['Roboto'] text-base ">
-            <span className="!font-bold">BooBee</span>
+            <span className="!font-bold">BoBee</span>
             <span
               className={`outlined-text !font-bold ${
                 dark ? 'outlined-text--dark' : 'outlined-text--light'

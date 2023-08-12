@@ -43,9 +43,8 @@ const WorkProcess = () => {
             agréable.
           </p>
           <p className="font-bold dark:!font-normal !text-base !text-center">
-            Je veux que mes clients valident leur commande satisfaits du chemin
-            parcouru, en sachant qu’en me faisant confiance pour la développer,
-            le bon choix a été fait.
+            Je veux que mes clients valident leur commande en sachant que le bon
+            choix a été fait en me faisant confiance pour la développer.
           </p>
         </div>
         <div className="w-2/3 flex self-center justify-center">

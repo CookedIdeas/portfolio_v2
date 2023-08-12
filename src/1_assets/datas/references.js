@@ -4,6 +4,7 @@ export const references = [
     title:
       'BoBeeBot, le Saas qui assure votre présence sur les réseaux sociaux !',
     basic_name: 'bobee',
+    client_basic_name: 'bobeebot',
     refLogos: true,
     stacks: ['Reactjs', 'Gatsbyjs', 'Scss', 'Strapi', 'Stripe'],
     text_1_title: 'Ce projet',
@@ -20,6 +21,7 @@ export const references = [
     id: 2,
     title: 'Cartographie des solutions RH a Viva Technology 2023',
     basic_name: 'labrhcarto2023',
+    client_basic_name: 'lelabrhcarto2023',
     refLogos: true,
     stacks: ['Reactjs', 'Leaflet et LeafletReact', 'Adobe Illustrator'],
     text_1_title: 'Ce projet',

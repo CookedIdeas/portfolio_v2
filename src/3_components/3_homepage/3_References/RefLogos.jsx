@@ -1,73 +1,139 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, StaticImage, getImage } from 'gatsby-plugin-image';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
+import { graphql, useStaticQuery } from 'gatsby';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const RefLogos = ({ project }) => {
+const RefLogos = ({ project, logos }) => {
+  console.log(logos);
   const { dark } = useGlobalContext();
-  const { basic_name } = project;
+  const [darkLogos, setDarkLogos] = useState([]);
+  const [lightLogos, setLightLogos] = useState([]);
 
-  const logosContainerStyle =
-    'w-full sm:w-2/3 lg:max-h-40 h-auto order-2 lg:order-1 flex flex-row justify-center items-center gap-8 lg:flex-col';
+  useEffect(() => {
+    if (logos) {
+      let darkLogos = logos.filter(
+        (logo) => logo.node.name.split('_').pop() === 'dark'
+      );
+      setDarkLogos(darkLogos);
+      console.log('darkLogos', darkLogos);
+      let lightLogos = logos.filter(
+        (logo) => logo.node.name.split('_').pop() === 'light'
+      );
+      setLightLogos(lightLogos);
+      console.log('lightLogos', lightLogos);
+    }
+  }, [logos]);
 
-  if (basic_name === 'bobee') {
-    return (
-      <div className={logosContainerStyle}>
-        {dark ? (
-          <StaticImage
-            src="../../../1_assets/images/projects_logos/bobeebot_project_logo_dark.png"
-            alt="logo bobeebot"
-            imgStyle={{ objectFit: 'contain' }}
-            class="w-1/2 lg:w-full"
-          />
-        ) : (
-          <StaticImage
-            src="../../../1_assets/images/projects_logos/bobeebot_project_logo_light.png"
-            alt="logo bobeebot"
-            imgStyle={{ objectFit: 'contain' }}
-            class="w-1/2 lg:w-full contain"
-          />
-        )}
-      </div>
-    );
+  // const { basic_name } = project;
+  if (
+    logos &&
+    logos.length === 2 &&
+    darkLogos.length > 0 &&
+    lightLogos.length > 0
+  ) {
+    if (dark) {
+      return (
+        <GatsbyImage
+          image={getImage(darkLogos[0].node)}
+          alt={`logo ${project.basic_name}`}
+        ></GatsbyImage>
+      );
+    } else {
+      return <GatsbyImage image={getImage(lightLogos[0].node)}></GatsbyImage>;
+    }
   }
 
-  if (basic_name === 'labrhcarto2023') {
-    return (
-      <div className={logosContainerStyle}>
-        {dark ? (
-          <StaticImage
-            src="../../../1_assets/images/projects_logos/lelabrh_dark.png"
-            alt="logo client 1"
-            imgStyle={{ objectFit: 'contain' }}
-            class="w-1/3 lg:w-2/3 "
-          />
-        ) : (
-          <StaticImage
-            src="../../../1_assets/images/projects_logos/lelabrh_light.png"
-            alt="logo client 1"
-            imgStyle={{ objectFit: 'contain' }}
-            class="w-full lg:w-full"
-          />
-        )}
+  // const data = useStaticQuery(projectLogosQuery);
+  // const imagesArray = data.allFile;
+  // console.log('imagesArray', imagesArray);
 
-        {dark ? (
-          <StaticImage
-            src="../../../1_assets/images/projects_logos/vivatech_2023_dark.png"
-            alt="logo bobeebot"
-            imgStyle={{ objectFit: 'contain' }}
-            class="w-1/2 lg:w-full"
-          />
-        ) : (
-          <StaticImage
-            src="../../../1_assets/images/projects_logos/vivatech_2023_light.png"
-            alt="logo bobeebot"
-            imgStyle={{ objectFit: 'contain' }}
-            class="w-1/2 lg:w-full"
-          />
-        )}
-      </div>
-    );
-  }
+  // const logosContainerStyle =
+  //   'w-full sm:w-2/3 lg:max-h-40 h-auto order-2 lg:order-1 flex flex-row justify-center items-center gap-8 lg:flex-col';
+
+  // if (basic_name === 'bobee') {
+  //   return (
+  //     <div className={logosContainerStyle}>
+  //       {dark ? (
+  //         <StaticImage
+  //           src="../../../1_assets/images/projects_logos/bobeebot_project_logo_dark.png"
+  //           alt="logo bobeebot"
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           class="w-1/2 lg:w-full"
+  //         />
+  //       ) : (
+  //         <StaticImage
+  //           src="../../../1_assets/images/projects_logos/bobeebot_project_logo_light.png"
+  //           alt="logo bobeebot"
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           class="w-1/2 lg:w-full contain"
+  //         />
+  //       )}
+  //     </div>
+  //   );
+  // }
+
+  // if (basic_name === 'labrhcarto2023') {
+  //   return (
+  //     <div className={logosContainerStyle}>
+  //       {dark ? (
+  //         <StaticImage
+  //           src="../../../1_assets/images/projects_logos/lelabrh_dark.png"
+  //           alt="logo client 1"
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           class="w-1/3 lg:w-2/3 "
+  //         />
+  //       ) : (
+  //         <StaticImage
+  //           src="../../../1_assets/images/projects_logos/lelabrh_light.png"
+  //           alt="logo client 1"
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           class="w-full lg:w-full"
+  //         />
+  //       )}
+
+  //       {dark ? (
+  //         <StaticImage
+  //           src="../../../1_assets/images/projects_logos/vivatech_2023_dark.png"
+  //           alt="logo bobeebot"
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           class="w-1/2 lg:w-full"
+  //         />
+  //       ) : (
+  //         <StaticImage
+  //           src="../../../1_assets/images/projects_logos/vivatech_2023_light.png"
+  //           alt="logo bobeebot"
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           class="w-1/2 lg:w-full"
+  //         />
+  //       )}
+  //     </div>
+  //   );
+  // }
   return <div></div>;
 };
 export default RefLogos;
+
+const projectLogosQuery = graphql`
+  query {
+    allFile(filter: { relativeDirectory: { eq: "projects_logo" } }) {
+      edges {
+        node {
+          id
+          name
+          base
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              width: 500
+              layout: CONSTRAINED
+              quality: 90
+              formats: WEBP
+            )
+          }
+        }
+      }
+    }
+  }
+`;
