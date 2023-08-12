@@ -1,7 +1,6 @@
 import React from 'react';
 import { GatsbyImage, StaticImage, getImage } from 'gatsby-plugin-image';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -17,16 +16,17 @@ const RefLogos = ({ project, logos }) => {
         (logo) => logo.node.name.split('_').pop() === 'dark'
       );
       setDarkLogos(darkLogos);
-      console.log('darkLogos', darkLogos);
+
       let lightLogos = logos.filter(
         (logo) => logo.node.name.split('_').pop() === 'light'
       );
       setLightLogos(lightLogos);
-      console.log('lightLogos', lightLogos);
     }
   }, [logos]);
 
-  // const { basic_name } = project;
+  const logosContainerStyle =
+    'w-full sm:w-2/3 lg:max-h-40 h-auto order-2 lg:order-1 flex flex-row justify-center items-center gap-8 lg:flex-col';
+
   if (
     logos &&
     logos.length === 2 &&
@@ -35,13 +35,63 @@ const RefLogos = ({ project, logos }) => {
   ) {
     if (dark) {
       return (
-        <GatsbyImage
-          image={getImage(darkLogos[0].node)}
-          alt={`logo ${project.basic_name}`}
-        ></GatsbyImage>
+        <div className={logosContainerStyle}>
+          <GatsbyImage
+            imgStyle={{ objectFit: 'contain' }}
+            image={getImage(darkLogos[0].node)}
+            alt={`logo ${project.basic_name}`}
+          ></GatsbyImage>
+        </div>
       );
     } else {
-      return <GatsbyImage image={getImage(lightLogos[0].node)}></GatsbyImage>;
+      return (
+        <div className={logosContainerStyle}>
+          <GatsbyImage
+            imgStyle={{ objectFit: 'contain' }}
+            image={getImage(lightLogos[0].node)}
+            alt={`logo ${project.basic_name}`}
+          ></GatsbyImage>
+        </div>
+      );
+    }
+  }
+
+  if (
+    logos &&
+    logos.length === 4 &&
+    darkLogos.length > 0 &&
+    lightLogos.length > 0
+  ) {
+    console.log('darkLogos', darkLogos);
+    if (dark) {
+      return (
+        <div className={logosContainerStyle}>
+          {darkLogos.map((logo) => {
+            console.log(logo);
+            return (
+              <GatsbyImage
+                imgStyle={{ objectFit: 'contain' }}
+                image={getImage(logo.node)}
+                alt={`logo ${project.basic_name}`}
+              />
+            );
+          })}
+        </div>
+      );
+    } else {
+      return (
+        <div className={logosContainerStyle}>
+          {lightLogos.map((logo) => {
+            return (
+              <GatsbyImage
+                imgStyle={{ objectFit: 'contain' }}
+                image={getImage(logo.node)}
+                alt={`logo ${project.basic_name}`}
+              ></GatsbyImage>
+            );
+          })}
+        </div>
+      );
     }
   }
 
@@ -114,26 +164,3 @@ const RefLogos = ({ project, logos }) => {
   return <div></div>;
 };
 export default RefLogos;
-
-const projectLogosQuery = graphql`
-  query {
-    allFile(filter: { relativeDirectory: { eq: "projects_logo" } }) {
-      edges {
-        node {
-          id
-          name
-          base
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: DOMINANT_COLOR
-              width: 500
-              layout: CONSTRAINED
-              quality: 90
-              formats: WEBP
-            )
-          }
-        }
-      }
-    }
-  }
-`;
