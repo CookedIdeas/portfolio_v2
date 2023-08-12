@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../99_smallReusable/Button';
 import RefLogos from './RefLogos';
 
-const ReferenceInformation = ({ project }) => {
+const ReferenceInformation = ({ project, logos }) => {
   const {
     title,
     stacks,
@@ -21,8 +21,8 @@ const ReferenceInformation = ({ project }) => {
 
   return (
     <div className="secondary-container-bcgColor p-6 mt-[-0.5rem] lg:mt-0 z-10 rounded-md shadow-lg flex flex-col gap-4 w-full items-start justify-between relative">
-      <div className="flex lg:hidden w-full justify-center">
-        <RefLogos project={project} />
+      <div className="flex xl:hidden w-full justify-center">
+        <RefLogos project={project} logos={logos} />
       </div>
       <div className="flex flex-col gap-4">
         <h3>{title}</h3>

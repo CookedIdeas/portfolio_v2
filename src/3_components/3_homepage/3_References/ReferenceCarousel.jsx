@@ -9,11 +9,11 @@ import {
 
 const ReferenceCarousel = ({ imagesArray, project }) => {
   const chevronContainerStyle =
-    'top-0 bottom-0  flex justify-center items-center p-3 lg:p-1 opacity-60 hover:opacity-100 cursor-pointer z-20';
+    'top-0 bottom-0  flex justify-center items-center p-3 xl:p-1 opacity-60 hover:opacity-100 cursor-pointer z-20';
   const chevronStyle = 'w-6 h-6 text-neutral-400';
   return (
     <div
-      className="max-h-2/3 z-0 relative rounded-t-md lg:rounded-tr-none lg:rounded-l-md overflow-hidden max-w-[30rem] lg:max-w-none w-full shadow-lg 
+      className="max-h-2/3 z-0 relative rounded-t-md xl:rounded-tr-none xl:rounded-l-md overflow-hidden max-w-[30rem] xl:max-w-none w-full shadow-lg 
     order-1 lg:order-2"
     >
       {imagesArray.length > 0 && (

@@ -34,17 +34,20 @@ const SingleReference = ({ project }) => {
   }, [project, data.projectsImages.edges, data.refLogos.edges]);
 
   return (
-    <div className="w-full h-auto flex flex-col lg:flex-row items-center lg:items-stretch">
-      <div className="w-full px-4 lg:w-2/3 flex flex-col-reverse sm:flex-row lg:flex-col gap-8 lg:gap-4 lg:px-0 lg:py-6 justify-around lg:justify-between items-center">
+    <div className="w-full h-auto flex flex-col xl:flex-row items-center xl:items-stretch">
+      <div className="w-full px-4 lg:w-2/3 flex flex-col-reverse sm:flex-row xl:flex-col gap-8 lg:gap-4 xl:px-0 xl:py-6 justify-around xl:justify-between items-center">
         {thisProjectsClientsLogos.length > 0 && (
-          <div className="hidden lg:flex  w-full  justify-center">
+          <div className="hidden xl:flex  w-full h-1/2 justify-center items-center">
             <RefLogos project={project} logos={thisProjectsClientsLogos} />
           </div>
         )}
 
         <ReferenceCarousel project={project} imagesArray={thisProjectImages} />
       </div>
-      <ReferenceInformation project={project} />
+      <ReferenceInformation
+        project={project}
+        logos={thisProjectsClientsLogos}
+      />
     </div>
   );
 };

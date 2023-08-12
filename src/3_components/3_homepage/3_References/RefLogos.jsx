@@ -15,6 +15,8 @@ const RefLogos = ({ project, logos }) => {
       let darkLogos = logos.filter(
         (logo) => logo.node.name.split('_').pop() === 'dark'
       );
+      console.log('darkLogos', darkLogos);
+
       setDarkLogos(darkLogos);
 
       let lightLogos = logos.filter(
@@ -24,44 +26,40 @@ const RefLogos = ({ project, logos }) => {
     }
   }, [logos]);
 
-  const logosContainerStyle =
-    'w-full sm:w-2/3 lg:max-h-40 h-auto order-2 lg:order-1 flex flex-row justify-center items-center gap-8 lg:flex-col';
+  const logosContainerStyle = `${
+    darkLogos.length <= 1 ? 'w-1/3 md:w-1/3 xl:w-2/3' : 'w-1/3 md:w-1/3'
+  }  min-w-[10rem]  lg:max-h-40 h-auto order-2 lg:order-1 flex flex-row justify-center items-center gap-8 lg:flex-col`;
 
-  if (
-    logos &&
-    logos.length === 2 &&
-    darkLogos.length > 0 &&
-    lightLogos.length > 0
-  ) {
-    if (dark) {
-      return (
-        <div className={logosContainerStyle}>
-          <GatsbyImage
-            imgStyle={{ objectFit: 'contain' }}
-            image={getImage(darkLogos[0].node)}
-            alt={`logo ${project.basic_name}`}
-          ></GatsbyImage>
-        </div>
-      );
-    } else {
-      return (
-        <div className={logosContainerStyle}>
-          <GatsbyImage
-            imgStyle={{ objectFit: 'contain' }}
-            image={getImage(lightLogos[0].node)}
-            alt={`logo ${project.basic_name}`}
-          ></GatsbyImage>
-        </div>
-      );
-    }
-  }
+  // if (
+  //   logos &&
+  //   logos.length === 2 &&
+  //   darkLogos.length > 0 &&
+  //   lightLogos.length > 0
+  // ) {
+  //   if (dark) {
+  //     return (
+  //       <div className={logosContainerStyle}>
+  //         <GatsbyImage
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           image={getImage(darkLogos[0].node)}
+  //           alt={`logo ${project.basic_name}`}
+  //         />
+  //       </div>
+  //     );
+  //   } else {
+  //     return (
+  //       <div className={logosContainerStyle}>
+  //         <GatsbyImage
+  //           imgStyle={{ objectFit: 'contain' }}
+  //           image={getImage(lightLogos[0].node)}
+  //           alt={`logo ${project.basic_name}`}
+  //         />
+  //       </div>
+  //     );
+  //   }
+  // }
 
-  if (
-    logos &&
-    logos.length === 4 &&
-    darkLogos.length > 0 &&
-    lightLogos.length > 0
-  ) {
+  if (logos && darkLogos.length > 0 && lightLogos.length > 0) {
     console.log('darkLogos', darkLogos);
     if (dark) {
       return (
@@ -87,7 +85,7 @@ const RefLogos = ({ project, logos }) => {
                 imgStyle={{ objectFit: 'contain' }}
                 image={getImage(logo.node)}
                 alt={`logo ${project.basic_name}`}
-              ></GatsbyImage>
+              />
             );
           })}
         </div>
