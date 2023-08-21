@@ -45,8 +45,8 @@ const WorkProcess = () => {
           </p>
           <p className="flex justify-center">
             <Balancer className=" font-bold dark:!font-normal !text-base !text-center">
-              Je veux que mes clients valident leur commande en sachant que le
-              bon choix a été fait en me faisant confiance pour la développer.
+              Je veux que mes clients sachent que le bon choix a été fait en me
+              faisant confiance.
             </Balancer>
           </p>
         </div>

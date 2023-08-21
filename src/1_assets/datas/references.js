@@ -47,7 +47,7 @@ export const references = [
     text_2_title: "Ce que j'ai appris",
     text_2_text:
       "L'importance d'une préparation rigoureuse / Justifier ses choix techniques / Construire un Kanban facilement utilisable par des développeurs travaillant en méthodologie agile.",
-
+    link: 'https://trello.com/invite/b/dgGbMZ7C/ATTI84a39bcfc2df1ef3b9e0c5dc71d5d2c9BD9713C6/menu-maker-by-qwenta',
     gitDisabled: false,
     disabled: false,
   },
