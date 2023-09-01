@@ -11,21 +11,22 @@ const SingleRecommandation = ({ reco, faceImg }) => {
         <div className="drop-shadow-0 transition-all hover:drop-shadow-lg">
           {faceImg.length > 0 && (
             <a
-              className="relative"
               href={linkedinLink}
               rel="noreferrer"
               target="_blank"
               aria-label={`lien vers le profil linkedIn de ${name}`}
             >
-              <div className="rounded-full overflow-hidden w-20">
-                <GatsbyImage
-                  alt={`portrait de ${name}`}
-                  image={getImage(faceImg[0].node)}
-                  loading="eager"
-                />
-              </div>
-              <div className="absolute bottom-0 right-0 bg-white text-black">
-                <BsLinkedin size={'1.2rem'} />
+              <div className="relative">
+                <div className="rounded-full overflow-hidden w-20">
+                  <GatsbyImage
+                    alt={`portrait de ${name}`}
+                    image={getImage(faceImg[0].node)}
+                    loading="eager"
+                  />
+                </div>
+                <div className="absolute bottom-0 right-0 bg-white text-black">
+                  <BsLinkedin size={'1.2rem'} />
+                </div>
               </div>
             </a>
           )}
