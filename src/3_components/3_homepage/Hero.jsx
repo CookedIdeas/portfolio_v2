@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import Button from '../99_smallReusable/Button';
+
 import { IconContext } from 'react-icons';
 import { BsFillArrowDownCircleFill } from 'react-icons/bs';
+import { useGlobalContext } from '../../2_context/GlobalContext';
 
 const Hero = () => {
+  const { dark } = useGlobalContext();
   const data = useStaticQuery(
     graphql`
       query {
@@ -35,6 +37,16 @@ const Hero = () => {
       }
     `
   );
+
+  const handleGoToNextPartClick = () => {
+    window.scrollTo({
+      top: document
+        .getElementById('introduction_section')
+        .getBoundingClientRect().y,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div style={{ display: 'grid' }} className="bg-black">
@@ -66,19 +78,22 @@ const Hero = () => {
             </span>
           </h2>
           <div className="mt-8">
-            <Button
+            <button
+              className={`${
+                dark ? 'btn btn--dark ' : 'btn'
+              } rounded-full border dark:border-0  !text-[#121212] !font-normal flex items-center justify-center`}
               type={'Anchor'}
               to={'/#introduction_section'}
               alt_text={'Voir la partie suivante'}
-              text_fr={
-                <IconContext.Provider
-                  value={{ size: '1.4rem' }}
-                  className="pointer-events-none"
-                >
-                  <BsFillArrowDownCircleFill className="pointer-events-none" />
-                </IconContext.Provider>
-              }
-            />
+              onClick={() => handleGoToNextPartClick()}
+            >
+              <IconContext.Provider
+                value={{ size: '1.4rem' }}
+                className="pointer-events-none"
+              >
+                <BsFillArrowDownCircleFill className="pointer-events-none" />
+              </IconContext.Provider>
+            </button>
           </div>
         </div>
       </div>

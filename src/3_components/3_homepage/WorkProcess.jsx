@@ -25,7 +25,7 @@ const WorkProcess = () => {
             'Aucun problème, mon but est justement de vous proposer la meilleure solution.'
           }
         />
-        <p>
+        <p className="mb-4">
           Dés que nous sommes accordés sur une solution, je lance le
           développement. Dans une approche agile, nous validons les différentes
           étapes et les possibles modifications à apporter en cours de projet.

@@ -30,7 +30,8 @@ p {
 }
 
 h2 {
-  @apply text-2xl scroll-mt-8 lg:text-3xl;
+  // scroll-margin-top: 10rem;
+  @apply text-2xl  lg:text-3xl;
 }
 
 h3 {

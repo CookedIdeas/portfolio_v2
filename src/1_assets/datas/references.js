@@ -31,40 +31,8 @@ export const references = [
     text_2_text:
       'Graphisme moderne et adapté à la chartre graphique du client, possibilités de filtrer les données affichées, affichage des start-ups selon leur(s) date(s) de présence sur le salon.',
     link: 'https://lab-rh.com/carto-viva-2023',
-    git: 'https://lab-rh.com/carto-viva-2023',
-    gitDisabled: true,
-    disabled: false,
-  },
-  {
-    id: 3,
-    title: "Planifier le développement d'un site de création de menus",
-    basic_name: 'projectplanification',
-    refLogos: false,
-    stacks: ['Trello', 'Méthodologie agile'],
-    text_1_title: 'Mission',
-    text_1_text:
-      "Rédaction des spécifications techniques et fonctionnelles et d'un backlog. Mise en place d'un kanban et d'un outil de veille technologique.",
-    text_2_title: "Ce que j'ai appris",
-    text_2_text:
-      "L'importance d'une préparation rigoureuse / Justifier ses choix techniques / Construire un Kanban facilement utilisable par des développeurs travaillant en méthodologie agile.",
-    link: 'https://trello.com/invite/b/dgGbMZ7C/ATTI84a39bcfc2df1ef3b9e0c5dc71d5d2c9BD9713C6/menu-maker-by-qwenta',
-    gitDisabled: false,
-    disabled: false,
-  },
-  {
-    id: 4,
-    title: "Débugger et optimiser le site d'une photographe",
-    basic_name: 'performance',
-    refLogos: false,
-    stacks: ['Chrome DevTools', 'Lighthouse', 'Wave'],
-    text_1_title: 'Mission',
-    text_1_text:
-      "Retravailler le code d'un site existant pour obtenir un site sans bug et optimisé au niveau de ses performances et de son accessibilité.",
-    text_2_title: "Ce que j'ai appris",
-    text_2_text:
-      "Mise en pratique de mes connaissances sur le SEO / Utiliser Lighthouse et Wave pour identifier et prioriser les points d'amélioration existants / Rendre un site accessible à tous.",
-    git: 'https://github.com/CookedIdeas/4_OC_Nina_Carducci',
-    gitDisabled: false,
+    // git: 'https://lab-rh.com/carto-viva-2023',
+    // gitDisabled: true,
     disabled: false,
   },
 ];

@@ -4,6 +4,7 @@ import ThemeSwitch from './ThemeSwitch';
 import { navLinks } from '../../../1_assets/datas/navLinks';
 import SocialLinks from './SocialLinks';
 import GradientLine from '../../99_smallReusable/GradientLine';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const NavHeader = memo(function NavHeader({ isPageScrollOnTop = true }) {
   const { dark, isNavHeaderOpen } = useGlobalContext();
@@ -24,7 +25,13 @@ const NavHeader = memo(function NavHeader({ isPageScrollOnTop = true }) {
               key={id}
               className="uppercase text-primary-light dark:text-darkPurple"
             >
-              <a href={toAnchor}>{text_fr}</a>
+              {/* <a href={toAnchor}>{text_fr}</a> */}
+              <AnchorLink
+                to={`/${toAnchor}`}
+                title={text_fr}
+                className="stripped"
+                stripHash
+              />
               {/* <AnchorLink
                 to={toAnchor}
                 stripHash

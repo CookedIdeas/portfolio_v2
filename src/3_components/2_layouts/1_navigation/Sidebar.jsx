@@ -4,9 +4,9 @@ import { ReactComponent as SquaregLogoLight } from '../../../1_assets/images/log
 import { ReactComponent as SquaregLogoDark } from '../../../1_assets/images/logos/logo_squareG_dark.svg';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
 import { navLinks } from '../../../1_assets/datas/navLinks.js';
-import { Link } from 'gatsby';
 import GradientLine from '../../99_smallReusable/GradientLine';
 import ThemeSwitch from './ThemeSwitch';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Sidebar = ({ isSidebarInHero, isSidebarInFooter }) => {
   const { dark } = useGlobalContext();
@@ -36,14 +36,19 @@ const Sidebar = ({ isSidebarInHero, isSidebarInFooter }) => {
           const { id, text_fr, toAnchor } = link;
           return (
             <li key={id}>
-              <a href={toAnchor} className="font-normal hover:drop-shadow-glow">
+              {/* <a href={toAnchor} className="font-normal hover:drop-shadow-glow">
                 {text_fr}
-              </a>
-              {/* <AnchorLink to={toAnchor} stripHash title={text_fr} /> */}
+              </a> */}
+              <AnchorLink
+                to={`/${toAnchor}`}
+                title={text_fr}
+                className="stripped font-normal hover:drop-shadow-glow"
+                stripHash
+              />
             </li>
           );
         })}
-        <li>
+        {/* <li>
           <GradientLine />
         </li>
         <li>
@@ -53,7 +58,7 @@ const Sidebar = ({ isSidebarInHero, isSidebarInFooter }) => {
           >
             blog
           </Link>
-        </li>
+        </li> */}
       </ul>
       <div className="flex flex-col gap-4 items-center">
         <div>
