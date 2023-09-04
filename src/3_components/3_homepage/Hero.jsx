@@ -85,6 +85,7 @@ const Hero = () => {
               type={'Anchor'}
               to={'/#introduction_section'}
               alt_text={'Voir la partie suivante'}
+              aria-label={'Aria Name'}
               onClick={() => handleGoToNextPartClick()}
             >
               <IconContext.Provider

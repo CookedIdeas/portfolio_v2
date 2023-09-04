@@ -25,8 +25,8 @@ const ReferenceCarousel = ({ imagesArray, project }) => {
             autoPlay={true}
             infiniteLoop={true}
             stopOnHover={true}
-            showStatus={false}
-            showIndicators={true}
+            showStatus={true}
+            showIndicators={false}
             dynamicHeight={false}
             centerMode={false}
             width={'100%'}
