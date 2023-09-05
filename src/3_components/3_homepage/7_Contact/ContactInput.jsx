@@ -5,7 +5,7 @@ const ContactInput = ({ type, inputName, placeHolder, cutWidth }) => {
     return (
       <div className="input-container">
         <input
-          id={inputName}
+          id={`${inputName}-input`}
           className="input"
           type="text"
           name={inputName}
@@ -25,7 +25,7 @@ const ContactInput = ({ type, inputName, placeHolder, cutWidth }) => {
     return (
       <div className="input-container !h-40">
         <textarea
-          id={inputName}
+          id={`${inputName}-input`}
           className="input input--textarea"
           name={inputName}
           placeholder=" "
