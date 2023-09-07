@@ -1,8 +1,7 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import { customFetch } from '../5_utils/utils';
 
 export const useSendMail = (mailBody) => {
-  const queryClient = useQueryClient();
   const {
     mutate: sendMail,
     isLoading,
