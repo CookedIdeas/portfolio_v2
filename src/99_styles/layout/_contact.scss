@@ -15,6 +15,10 @@
   }
 }
 
+.invalid-input {
+  @apply border-2 border-rose-500;
+}
+
 .cut {
   @apply invisible bg-primary-light dark:bg-darkPurple
   rounded-full 
