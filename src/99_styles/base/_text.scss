@@ -25,7 +25,8 @@ div > p {
   @apply text-center sm:text-start;
 }
 
-p {
+p,
+a {
   @apply lg:text-base;
 }
 

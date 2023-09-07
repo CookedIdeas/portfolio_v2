@@ -51,7 +51,13 @@ const Footer = () => {
         />{' '}
         passion
       </p>
-      <p>&#169; {new Date().getFullYear()} Gabriel G.</p>
+      <div className="flex gap-2 items-center">
+        <p>&#169; {new Date().getFullYear()} Gabriel G.</p> <span> - </span>{' '}
+        <a href="/mentions-legales" className="hover:underline">
+          Mentions légales
+        </a>
+      </div>
+
       {dark ? (
         <SquaregLogoDark alt="logo version dark" className="h-8" />
       ) : (

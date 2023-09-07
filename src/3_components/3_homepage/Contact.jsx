@@ -3,6 +3,8 @@ import ContactInput from './7_Contact/ContactInput';
 import Button from '../99_smallReusable/Button';
 import { IconContext } from 'react-icons';
 import { BsFillSendFill } from 'react-icons/bs';
+import { useQuery } from '@tanstack/react-query';
+import { useSendMail } from '../../4_customHooks/useSendMail';
 
 const Contact = () => {
   const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
@@ -28,20 +30,41 @@ const Contact = () => {
     }
   };
 
+  const { isLoading, sendMail } = useSendMail();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const fullName = e.target.nom.value;
     const company = e.target.entreprise.value;
-    const mail = e.target.entreprise.mail;
-    const phone = e.target.telephone.mail;
-    const message = e.target.projet.mail;
+    const mail = e.target.mail.value;
+    const phone = e.target.telephone.value;
+    const message = e.target.projet.value;
 
     const isEmailValid = validateEmail(mail);
+    console.log('mail', mail);
+
+    console.log('isEmailValid', isEmailValid);
 
     emailIsError(!isEmailValid);
     if (!isEmailValid) return;
 
+    const mailBody = {
+      fullName,
+      company,
+      mail,
+      phone,
+      message,
+    };
+
     console.log('send request');
+
+    console.log('isLoading', isLoading);
+
+    sendMail(mailBody, {
+      onSuccess: () => {
+        console.log('success from contact');
+      },
+    });
   };
 
   return (
