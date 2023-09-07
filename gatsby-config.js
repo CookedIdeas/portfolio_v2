@@ -33,6 +33,14 @@ module.exports = {
       __key: 'images',
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
+      },
+      __key: 'pages',
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/1_assets/images/icon.png',
@@ -62,4 +70,7 @@ module.exports = {
       },
     },
   ],
+  flags: {
+    DEV_SSR: true,
+  },
 };

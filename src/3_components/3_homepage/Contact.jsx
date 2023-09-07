@@ -3,7 +3,6 @@ import ContactInput from './7_Contact/ContactInput';
 import Button from '../99_smallReusable/Button';
 import { IconContext } from 'react-icons';
 import { BsFillSendFill } from 'react-icons/bs';
-import { useQuery } from '@tanstack/react-query';
 import { useSendMail } from '../../4_customHooks/useSendMail';
 
 const Contact = () => {
