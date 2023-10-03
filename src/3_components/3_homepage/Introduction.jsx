@@ -3,6 +3,7 @@ import { ReactComponent as CircleBottom } from '../../1_assets/images/avatar/cir
 import AvatarPng from './2_Introduction/AvatarPng';
 import Button from '../99_smallReusable/Button';
 import { useGlobalContext } from '../../2_context/GlobalContext';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Introduction = () => {
   const { dark } = useGlobalContext();
@@ -62,16 +63,36 @@ const Introduction = () => {
           aussi barman, coordinateur d’association, technicien de laboratoire...
         </p> */}
         <div className="flex gap-4 mt-4 flex-col sm:flex-row">
-          <Button
+          <AnchorLink
+            to="/#references_section"
+            title="En savoir plus"
+            className={`${
+              dark ? 'btn btn--dark ' : 'btn'
+            } rounded-full border dark:border-0 flex items-center justify-center`}
+            stripHash
+          >
+            <span className="!text-[#121212] !font-normal">En savoir plus</span>
+          </AnchorLink>
+          <AnchorLink
+            to="/#contact_section"
+            title="Me contacter"
+            className={`${
+              dark ? 'btn btn--dark ' : 'btn'
+            } rounded-full border dark:border-0 flex items-center justify-center`}
+            stripHash
+          >
+            <span className="!text-[#121212] !font-normal">Me contacter</span>
+          </AnchorLink>
+          {/* <Button
             text_fr={'En savoir plus'}
             type={'Anchor'}
             to={'/#references_section'}
-          />
-          <Button
+          /> */}
+          {/* <Button
             text_fr={'Me contacter'}
             type={'Anchor'}
             to={'/#contact_section'}
-          />
+          /> */}
         </div>
       </div>
     </section>

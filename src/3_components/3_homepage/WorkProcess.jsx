@@ -1,9 +1,11 @@
 import React from 'react';
 import ProcessQuestion from './5_WorkProcess/ProcessQuestion';
-import Button from '../99_smallReusable/Button';
 import Balancer from 'react-wrap-balancer';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { useGlobalContext } from '../../2_context/GlobalContext';
 
 const WorkProcess = () => {
+  const { dark } = useGlobalContext();
   return (
     <section className="min-h-35 flex flex-col gap-12" id="process_section">
       <h2>Mon process de travail</h2>
@@ -51,11 +53,22 @@ const WorkProcess = () => {
           </p>
         </div>
         <div className="w-2/3 flex self-center justify-center">
-          <Button
+          <AnchorLink
+            to="/#contact_section"
+            title="Me contacter"
+            className={`${
+              dark ? 'btn btn--dark ' : 'btn'
+            } rounded-full border dark:border-0 flex items-center justify-center`}
+          >
+            <span className="!text-[#121212] !font-normal">
+              Parlons de votre besoin
+            </span>
+          </AnchorLink>
+          {/* <Button
             text_fr={'Parlons de votre besoin'}
             type={'Anchor'}
             to={'/#contact_section'}
-          />
+          /> */}
         </div>
       </div>
     </section>

@@ -45,8 +45,8 @@ const ThemeSwitch = ({ forSidebar }) => {
         ) : (
           <BsFillSunFill
             className={`absolute block z-30 ${
-              forSidebar ? 'top-[4px] right-[4px]' : 'top-[4px] right-[4px]'
-            } h-4 text-lightGrey `}
+              forSidebar ? 'top-[4px] right-[5px]' : 'top-[4px] right-[3px]'
+            } h-4 text-primary-light `}
           />
         )}
       </span>

@@ -41,10 +41,12 @@ const Sidebar = ({ isSidebarInHero, isSidebarInFooter }) => {
               </a> */}
               <AnchorLink
                 to={`/${toAnchor}`}
-                title={text_fr}
-                className="stripped font-normal hover:drop-shadow-glow"
+                title={`aller à {text_fr}`}
+                className="stripped font-normal relative"
                 stripHash
-              />
+              >
+                <span className="effect-underline">{text_fr}</span>
+              </AnchorLink>
             </li>
           );
         })}

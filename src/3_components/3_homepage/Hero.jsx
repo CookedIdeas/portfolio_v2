@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { IconContext } from 'react-icons';
 import { BsFillArrowDownCircleFill } from 'react-icons/bs';
 import { useGlobalContext } from '../../2_context/GlobalContext';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
 const Hero = () => {
   const { dark } = useGlobalContext();
@@ -38,15 +39,15 @@ const Hero = () => {
     `
   );
 
-  const handleGoToNextPartClick = () => {
-    window.scrollTo({
-      top: document
-        .getElementById('introduction_section')
-        .getBoundingClientRect().y,
-      left: 0,
-      behavior: 'smooth',
-    });
-  };
+  // const handleGoToNextPartClick = () => {
+  //   window.scrollTo({
+  //     top: document
+  //       .getElementById('introduction_section')
+  //       .getBoundingClientRect().y,
+  //     left: 0,
+  //     behavior: 'smooth',
+  //   });
+  // };
 
   return (
     <div style={{ display: 'grid' }} className="bg-black">
@@ -78,7 +79,22 @@ const Hero = () => {
             </span>
           </h2>
           <div className="mt-8">
-            <button
+            <AnchorLink
+              to="/#introduction_section"
+              title="aller à l'introduction"
+              className={`${
+                dark ? 'btn btn--dark ' : 'btn'
+              } rounded-full border dark:border-0  !text-[#121212] !font-normal flex items-center justify-center`}
+              stripHash
+            >
+              <IconContext.Provider
+                value={{ size: '1.4rem' }}
+                className="pointer-events-none"
+              >
+                <BsFillArrowDownCircleFill className="pointer-events-none" />
+              </IconContext.Provider>
+            </AnchorLink>
+            {/* <button
               className={`${
                 dark ? 'btn btn--dark ' : 'btn'
               } rounded-full border dark:border-0  !text-[#121212] !font-normal flex items-center justify-center`}
@@ -94,7 +110,7 @@ const Hero = () => {
               >
                 <BsFillArrowDownCircleFill className="pointer-events-none" />
               </IconContext.Provider>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

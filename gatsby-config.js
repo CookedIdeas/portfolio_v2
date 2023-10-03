@@ -24,6 +24,7 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-svgr',
     `gatsby-plugin-sass`,
+    `gatsby-plugin-recaptcha`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {

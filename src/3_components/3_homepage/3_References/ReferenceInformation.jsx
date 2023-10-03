@@ -56,7 +56,7 @@ const ReferenceInformation = ({ project, logos }) => {
             to={link}
             text_fr={'Visiter le site'}
             alternative_content={'Bientôt disponible'}
-            additionalClassName={'mt-2 w-44'}
+            additionalClassName={'mt-2 w-56'}
             disabled={disabled}
           />
         )}
@@ -66,7 +66,7 @@ const ReferenceInformation = ({ project, logos }) => {
             to={git}
             text_fr={'Voir le git'}
             alternative_content={'Git à venir'}
-            additionalClassName={'mt-2 w-44'}
+            additionalClassName={'mt-2 w-56'}
             disabled={gitDisabled}
           />
         )}

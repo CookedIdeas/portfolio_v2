@@ -56,7 +56,6 @@ const tailwindSettings = {
       // '10xl': '10rem',
     },
     fontFamily: {
-      raleway: ['Raleway'],
       sourceCode: ['Source Code Pro'],
       roboto: ['Roboto'],
     },

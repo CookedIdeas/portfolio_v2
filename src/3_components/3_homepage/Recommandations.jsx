@@ -32,7 +32,7 @@ const Recommandations = () => {
   return (
     <section className="min-h-35 flex flex-col gap-12">
       <h2>Ce qu'ils disent de moi</h2>
-      <div className="flex flex-col gap-8 xl:flex-row">
+      <div className="flex flex-col gap-8 xl:flex-col">
         {recomandations.map((reco) => (
           <SingleRecommandation
             key={reco.id}

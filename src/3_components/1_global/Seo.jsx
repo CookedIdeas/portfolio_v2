@@ -24,7 +24,7 @@ const Seo = ({ title, description, pathname, children }) => {
   return (
     <>
       <html lang={lang_fr ? 'fr' : 'eng'} />
-      <title>{seo.title + ' | Gabriel G. Web Developer'}</title>
+      <title>{seo.title}</title>
       <meta name="color-scheme" content="dark light"></meta>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

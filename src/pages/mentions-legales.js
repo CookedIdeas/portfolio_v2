@@ -130,4 +130,4 @@ const LegalPage = () => {
 
 export default LegalPage;
 
-export const Head = () => <Seo title="Mentions légales" />;
+export const Head = () => <Seo title="Gabriel G. - Mentions légales" />;

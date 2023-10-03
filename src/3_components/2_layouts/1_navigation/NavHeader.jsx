@@ -28,10 +28,12 @@ const NavHeader = memo(function NavHeader({ isPageScrollOnTop = true }) {
               {/* <a href={toAnchor}>{text_fr}</a> */}
               <AnchorLink
                 to={`/${toAnchor}`}
-                title={text_fr}
+                title={`aller à ${text_fr}`}
                 className="stripped"
                 stripHash
-              />
+              >
+                <span className="relative effect-underline">{text_fr}</span>
+              </AnchorLink>
               {/* <AnchorLink
                 to={toAnchor}
                 stripHash

@@ -20,7 +20,7 @@ const Footer = () => {
             href="https://www.gatsbyjs.com/"
             rel="noreferrer"
             target="_blank"
-            className="hover:underline"
+            className="relative effect-underline"
           >
             <GatsbyLogo
               alt="gatsby js logo"
@@ -35,7 +35,7 @@ const Footer = () => {
             href="https://tailwindcss.com/"
             rel="noreferrer"
             target="_blank"
-            className="hover:underline"
+            className="relative effect-underline"
           >
             <TailwindLogo
               alt="tailwind css logo"
@@ -53,7 +53,7 @@ const Footer = () => {
       </p>
       <div className="flex gap-2 items-center">
         <p>&#169; {new Date().getFullYear()} Gabriel G.</p> <span> - </span>{' '}
-        <a href="/mentions-legales" className="hover:underline">
+        <a href="/mentions-legales" className="relative effect-underline">
           Mentions légales
         </a>
       </div>
