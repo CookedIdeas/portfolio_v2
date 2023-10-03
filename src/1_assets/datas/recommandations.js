@@ -13,7 +13,8 @@ export const recomandations = [
     id: 2,
     name: 'stephane',
     fullName: 'Stéphane Caezenave',
-    position: 'Consultant',
+    position:
+      'Consultant, formateur de formateurs, ingénieur pédagogique et facilitateur',
     linkedinLink: 'https://www.linkedin.com/in/stephanecazenave/',
     company: '',
     verbatim:
@@ -23,7 +24,7 @@ export const recomandations = [
     id: 3,
     name: 'gilles',
     fullName: 'Gilles Panczer',
-    position: 'Consultant',
+    position: 'Operational Excellence Senior Consultant',
     linkedinLink: 'https://www.linkedin.com/in/gillespanczer/',
     company: '',
     verbatim:

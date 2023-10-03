@@ -6,9 +6,9 @@ import { BsLinkedin } from 'react-icons/bs';
 const SingleRecommandation = ({ reco, faceImg }) => {
   const { name, fullName, position, company, verbatim, linkedinLink } = reco;
   return (
-    <Wrapper className="p-5 bg-white rounded-lg flex flex-col gap-4 xl:w-1/2 h-full drop-shadow-lg">
+    <Wrapper className="p-5 bg-white rounded-lg flex flex-col gap-4 h-full drop-shadow-lg">
       <div className="flex flex-col sm:flex-row items-center gap-4 pl-4">
-        <div className="drop-shadow-0 transition-all hover:drop-shadow-lg">
+        <div className="drop-shadow-0 transition-all hover:drop-shadow-lg duration-300">
           {faceImg.length > 0 && (
             <a
               href={linkedinLink}
