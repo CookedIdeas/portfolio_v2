@@ -53,3 +53,7 @@
 .input:focus ~ .placeholder {
   @apply text-white dark:text-secondaryBackground-dark;
 }
+
+.disabled-contact-input {
+  @apply opacity-70;
+}

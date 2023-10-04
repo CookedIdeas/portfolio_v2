@@ -1,49 +1,21 @@
-import * as React from "react"
-import { Link } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from 'react';
+import { Link } from 'gatsby';
+import Layout from '../3_components/1_global/Layout';
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Layout isIndexPage={false}>
+      <div className="min-h-[55vh] md:min-h-screen mt-12 md:mt-0 flex flex-col items-center justify-center gap-4">
+        <h1 className="text-9xl">404</h1>
+        <h2 className="text-center text-xl">Cette page n'existe pas !</h2>
+        <Link to="/" className="relative effect-underline">
+          Revenir à l'accueil
+        </Link>
+      </div>
+    </Layout>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head = () => <title>Not found</title>
+export const Head = () => <title>Aïe... | Gabriel G. - Développeur web</title>;

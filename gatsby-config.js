@@ -14,7 +14,7 @@ module.exports = {
     linkedInUsername: 'Gabriel G.',
     githubUsername: 'CookedIdeas',
     image: './src/assets/android-chrome-192x192.png',
-    siteUrl: `https://www.to-write.tld`,
+    siteUrl: `https://www.gabrielgourcerol.com`,
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -25,6 +25,7 @@ module.exports = {
     'gatsby-plugin-svgr',
     `gatsby-plugin-sass`,
     `gatsby-plugin-recaptcha`,
+    'gatsby-plugin-htaccess',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -44,7 +45,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/1_assets/images/icon.png',
+        icon: 'src/1_assets/images/icon.svg',
       },
     },
     {
@@ -70,7 +71,18 @@ module.exports = {
         offset: -70,
       },
     },
+    {
+      resolve: 'gatsby-plugin-htaccess',
+      options: {
+        RewriteBase: '/custom/',
+        https: true,
+        www: false,
+        SymLinksIfOwnerMatch: true,
+        host: 'gabrielgourcerol.com', // if 'www' is set to 'false', be sure to also remove it here!
+      },
+    },
   ],
+
   flags: {
     DEV_SSR: true,
   },

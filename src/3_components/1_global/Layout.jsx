@@ -41,7 +41,7 @@ const Layout = ({ children, isIndexPage = false }) => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isIndexPage]);
 
   return (
     <div
@@ -63,7 +63,7 @@ const Layout = ({ children, isIndexPage = false }) => {
 
         <main
           id="main_content"
-          className="min-h-screen
+          className="min-h-[75vh]
         flex flex-col gap-20
        px-4 sm:px-8 md:px-[4%]
        py-8 md:py-0

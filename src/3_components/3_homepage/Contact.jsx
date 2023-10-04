@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
-import Button from '../99_smallReusable/Button';
 import { IconContext } from 'react-icons';
 import {
   BsFillSendCheckFill,
@@ -8,8 +6,9 @@ import {
   BsFillSendFill,
 } from 'react-icons/bs';
 import { useSendMail } from '../../4_customHooks/useSendMail';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useGlobalContext } from '../../2_context/GlobalContext';
+import SocialLinks from '../2_layouts/1_navigation/SocialLinks';
+import { socialLinks } from '../../1_assets/datas/socialLinks';
 
 const Contact = () => {
   const { dark } = useGlobalContext();
@@ -38,6 +37,8 @@ const Contact = () => {
   const [isSendEmailLoading, setIsSendEmailLoading] = useState(false);
   const [isSendEmailSuccess, setIsSendEmailSuccess] = useState(false);
   const [isSendEmailError, setIsSendEmailError] = useState(false);
+
+  const [isFormDisabled, setIsFormDisabled] = useState(false);
 
   const [allInputs, setAllInputs] = useState({});
 
@@ -100,20 +101,25 @@ const Contact = () => {
 
   const { isLoading, isError, isSuccess, sendMail } = useSendMail();
 
-  // === Error handler === //
+  // === Error & Success & Loading handler === //
 
   useEffect(() => {
-    if (isError) {
-      setSecondNotificationMessage({
-        type: 'error',
-        message:
-          'Aïe... Une erreur est survenue ! Veuillez me contacter sur LinkedIn.',
-      });
+    if (isSuccess) {
+      setIsSendEmailSuccess(true);
+    } else {
+      setIsSendEmailSuccess(false);
     }
-  }, [isError]);
-
-  //https://alphonso-javier.medium.com/how-to-use-recaptcha-v3-with-gatsbyjs-and-express-2e963575db60
-  // const { executeRecaptcha } = useGoogleReCaptcha();
+    if (isError) {
+      setIsSendEmailError(true);
+    } else {
+      setIsSendEmailError(false);
+    }
+    if (isError || isSuccess || isLoading) {
+      setIsFormDisabled(true);
+    } else {
+      setIsFormDisabled(false);
+    }
+  }, [isError, isSuccess, isLoading]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -174,147 +180,229 @@ const Contact = () => {
     >
       <h2 className="self-start">Contactez-moi</h2>
 
-      {/* before send mail success, display form */}
-      {!isSuccess && (
-        <>
-          <p className="self-start text-start">
-            Pour savoir quand je suis disponible, je vous invite à me contacter
-            par ce formulaire.
-          </p>
-          <form
-            onSubmit={handleFormSubmit}
-            // action="https://formspree.io/f/xyyalloy"
-            // method="POST"
-            // target="_blank"
-            className="flex flex-col gap-6 w-full sm:w-4/5 lg:w-full xl:w-4/5 2xl:2/3 "
+      <p className="self-start text-start">
+        Pour savoir quand je suis disponible, je vous invite à me contacter par
+        ce formulaire.
+      </p>
+      <form
+        onSubmit={handleFormSubmit}
+        className="flex flex-col gap-6 w-full sm:w-4/5 lg:w-full xl:w-4/5 2xl:2/3 "
+      >
+        <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:grid-rows-2 ">
+          {/* NAME */}
+          <div
+            className={`input-container ${
+              isFormDisabled && 'disabled-contact-input'
+            }`}
           >
-            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:grid-rows-2 ">
-              {/* NAME */}
-              <div className="input-container">
-                <input
-                  id={`nom`}
-                  className="input"
-                  type="text"
-                  name="nom"
-                  placeholder=" "
-                  value={nameValue}
-                  onChange={(e) => setNameValue(e.target.value)}
-                />
-                <div className={`cut !w-[71px] `}></div>
-                <label htmlFor="nom" className="placeholder">
-                  Votre nom
-                </label>
-              </div>
+            <input
+              id={`nom`}
+              className="input"
+              type="text"
+              name="nom"
+              placeholder=" "
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
+              aria-disabled={isFormDisabled}
+              disabled={isFormDisabled}
+            />
+            <div className={`cut !w-[71px] `}></div>
+            <label htmlFor="nom" className="placeholder">
+              Votre nom
+            </label>
+          </div>
 
-              {/* COMPANY */}
-              <div className="input-container">
-                <input
-                  id={`entreprise`}
-                  className="input"
-                  type="text"
-                  name={'entreprise'}
-                  placeholder=" "
-                  value={companyValue}
-                  onChange={(e) => setCompanyValue(e.target.value)}
-                />
-                <div className={`cut !w-[100px] `}></div>
-                <label htmlFor={'entreprise'} className="placeholder">
-                  Votre entreprise
-                </label>
-              </div>
+          {/* COMPANY */}
+          <div
+            className={`input-container ${
+              isFormDisabled && 'disabled-contact-input'
+            }`}
+          >
+            <input
+              id={`entreprise`}
+              className="input"
+              type="text"
+              name={'entreprise'}
+              placeholder=" "
+              value={companyValue}
+              onChange={(e) => setCompanyValue(e.target.value)}
+              aria-disabled={isFormDisabled}
+              disabled={isFormDisabled}
+            />
+            <div className={`cut !w-[100px] `}></div>
+            <label htmlFor={'entreprise'} className="placeholder">
+              Votre entreprise
+            </label>
+          </div>
 
-              {/* MAIL ADRESS */}
-              <div className="input-container relative">
-                <input
-                  id={`mail`}
-                  className="input"
-                  type="text"
-                  name="mail"
-                  placeholder=" "
-                  // onBlur={(e) => checkInputValidity('mail', e)}
-                  onBlur={handleInputOnBlur}
-                  value={mailValue}
-                  onChange={(e) => setMailValue(e.target.value)}
-                />
-                <div className={`cut !w-[85px]`}></div>
-                <label htmlFor="mail" className="placeholder">
-                  Votre e-mail
-                </label>
-                <div
-                  id="email-error-message"
-                  className="hidden absolute right-2 bottom-0 text-xs"
-                >
-                  <span>Veuillez renseigner un email valide</span>
-                </div>
-              </div>
-              {/* PHONE */}
-              <div className="input-container">
-                <input
-                  id={`telephone`}
-                  className="input"
-                  type="tel"
-                  name="telephone"
-                  placeholder=" "
-                  value={phoneValue}
-                  onChange={(e) => setPhoneValue(e.target.value)}
-                />
-                <div className={`cut !w-[90px] `}></div>
-                <label htmlFor="telephone" className="placeholder">
-                  Votre numéro
-                </label>
-              </div>
+          {/* MAIL ADRESS */}
+          <div
+            className={`input-container ${
+              isFormDisabled && 'disabled-contact-input'
+            }`}
+          >
+            <input
+              id={`mail`}
+              className="input"
+              type="text"
+              name="mail"
+              placeholder=" "
+              // onBlur={(e) => checkInputValidity('mail', e)}
+              onBlur={handleInputOnBlur}
+              value={mailValue}
+              onChange={(e) => setMailValue(e.target.value)}
+              aria-disabled={isFormDisabled}
+              disabled={isFormDisabled}
+            />
+            <div className={`cut !w-[85px]`}></div>
+            <label htmlFor="mail" className="placeholder">
+              Votre e-mail
+            </label>
+            <div
+              id="email-error-message"
+              className="hidden absolute right-2 bottom-0 text-xs"
+            >
+              <span>Veuillez renseigner un email valide</span>
             </div>
-            {/* MESSAGE */}
-            <div className="input-container !h-40">
-              <textarea
-                id={`projet`}
-                className="input input--textarea"
-                name="projet"
-                placeholder=" "
-                value={messageValue}
-                onChange={(e) => setMessageValue(e.target.value)}
-                onBlur={handleInputOnBlur}
-              />
-              <div className={`cut !w-[80px]`}></div>
-              <label htmlFor="projet" className="placeholder">
-                Votre projet
-              </label>
-            </div>
+          </div>
+          {/* PHONE */}
+          <div
+            className={`input-container ${
+              isFormDisabled && 'disabled-contact-input'
+            }`}
+          >
+            <input
+              id={`telephone`}
+              className="input"
+              type="tel"
+              name="telephone"
+              placeholder=" "
+              value={phoneValue}
+              onChange={(e) => setPhoneValue(e.target.value)}
+              aria-disabled={isFormDisabled}
+              disabled={isFormDisabled}
+            />
+            <div className={`cut !w-[90px] `}></div>
+            <label htmlFor="telephone" className="placeholder">
+              Votre numéro
+            </label>
+          </div>
+        </div>
+        {/* MESSAGE */}
+        <div
+          className={`input-container !h-40 ${
+            isFormDisabled && 'disabled-contact-input'
+          }`}
+        >
+          <textarea
+            id={`projet`}
+            className="input input--textarea"
+            name="projet"
+            placeholder=" "
+            value={messageValue}
+            onChange={(e) => setMessageValue(e.target.value)}
+            onBlur={handleInputOnBlur}
+            aria-disabled={isFormDisabled}
+            disabled={isFormDisabled}
+          />
+          <div className={`cut !w-[80px]`}></div>
+          <label htmlFor="projet" className="placeholder">
+            Votre projet
+          </label>
+        </div>
 
-            <div className="w-full self-center flex flex-col items-center gap-2 relative">
-              <button
-                type="submit"
-                className={`${
-                  dark ? 'btn btn--dark ' : 'btn'
-                } w-1/2 self-center rounded-full border dark:border-0 !text-[#121212] font-normal flex items-center justify-center`}
-                aria-label="Envoyer le message"
-                aria-disabled={!isSendMailButtonEnabled}
-                disabled={!isSendMailButtonEnabled}
-              >
-                <IconContext.Provider value={{ size: '1.4rem' }}>
-                  {isLoading && <span>Loading</span>}
-                  {isSuccess && <BsFillSendCheckFill className="" />}
-                  {isError && <BsFillSendExclamationFill className="" />}
-                  {!isLoading && !isSuccess && !isError && (
-                    <BsFillSendFill className="" />
-                  )}
-                </IconContext.Provider>
-              </button>
-              <span className="absolute bottom-[-2rem]">
-                {notificationMessage.message}
-                {secondNotificationMessage.message}
+        <div className="w-full self-center flex flex-col items-center gap-2 relative">
+          <button
+            type="submit"
+            className={`${
+              dark ? 'btn btn--dark ' : 'btn'
+            } w-1/2 self-center rounded-full border dark:border-0 !text-[#121212] font-normal flex items-center justify-center`}
+            aria-label="Envoyer le message"
+            aria-disabled={!isSendMailButtonEnabled || isFormDisabled}
+            disabled={!isSendMailButtonEnabled || isFormDisabled}
+          >
+            <IconContext.Provider value={{ size: '1.4rem' }}>
+              {isLoading && <span className="mini-loader"></span>}
+              {isSuccess && <BsFillSendCheckFill className="" />}
+              {isError && <BsFillSendExclamationFill className="" />}
+              {!isLoading && !isSuccess && !isError && (
+                <BsFillSendFill className="" />
+              )}
+            </IconContext.Provider>
+          </button>
+          <span className="absolute bottom-[-2rem]">
+            {notificationMessage.message}
+            {secondNotificationMessage.message}
+          </span>
+
+          {/* === MESSAGES === */}
+
+          {/* === ERROR === */}
+          {isSendEmailError && (
+            <div className="mt-4 flex flex-col gap-2 items-center">
+              <span>Une erreur est survenue...</span>
+              <span className="text-center">
+                Je vous laisse me contacter sur{' '}
+                {socialLinks.map((link, index) => {
+                  return (
+                    <span key={link.id}>
+                      <a
+                        href={link.url}
+                        aria-label={link.alt_fr}
+                        rel="noreferrer"
+                        target="_blank"
+                        className="relative effect-underline"
+                      >
+                        {link.name}
+                      </a>
+                      {index < socialLinks.length - 1 ? (
+                        <span>
+                          {index < socialLinks.length - 2 ? ', ' : ' ou '}
+                        </span>
+                      ) : (
+                        '.'
+                      )}
+                    </span>
+                  );
+                })}
               </span>
             </div>
-          </form>
-        </>
-      )}
+          )}
 
-      {/* before send mail success, display form */}
-      {isSuccess && (
-        <div>
-          <span>Mail bien envoyé</span>
+          {/* === SUCCESS === */}
+          {isSendEmailSuccess && (
+            <div className="mt-4 flex flex-col gap-2 items-center">
+              <span>Votre mail a bien été envoyé !</span>
+              <span>J'y répondrai dans les meilleurs délais.</span>
+              <span className="text-center">
+                D'ici là, vous pouvez me retrouver sur{' '}
+                {socialLinks.map((link, index) => {
+                  return (
+                    <span key={link.id}>
+                      <a
+                        href={link.url}
+                        aria-label={link.alt_fr}
+                        rel="noreferrer"
+                        target="_blank"
+                        className="relative effect-underline"
+                      >
+                        {link.name}
+                      </a>
+                      {index < socialLinks.length - 1 ? (
+                        <span>
+                          {index < socialLinks.length - 2 ? ', ' : ' et '}
+                        </span>
+                      ) : (
+                        '.'
+                      )}
+                    </span>
+                  );
+                })}
+              </span>
+            </div>
+          )}
         </div>
-      )}
+      </form>
     </section>
   );
 };

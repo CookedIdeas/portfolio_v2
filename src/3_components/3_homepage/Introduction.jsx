@@ -1,7 +1,6 @@
 import React from 'react';
 import { ReactComponent as CircleBottom } from '../../1_assets/images/avatar/circle_bottom_thin.svg';
 import AvatarPng from './2_Introduction/AvatarPng';
-import Button from '../99_smallReusable/Button';
 import { useGlobalContext } from '../../2_context/GlobalContext';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 
