@@ -86,18 +86,28 @@ const LegalPage = () => {
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          <h3>Cookies</h3>
+          <h3>Vie privée</h3>
           <p>
-            Les utilisateurs sont informés que lors de leurs visites sur le
-            Site, un cookie peut s’installer automatiquement. Ce cookie ne
-            permet pas d’identifier les utilisateurs mais il enregistre des
-            informations liées à la navigation de ceux-ci sur le Site, à des
-            fins de statistiques et d’améliorations du Site.
+            Ce site utilise{' '}
+            <a
+              href="https://matomo.org"
+              target="_blank"
+              className="relative effect-underline"
+              rel="noreferrer"
+            >
+              Matomo
+            </a>{' '}
+            pour suivre les statistiques de visite.
+          </p>
+          <p>
+            Dans une démarche de protection de votre vie privée, les adresses IP
+            utilisées pour visiter le Site sont anonymisées. De même, aucun
+            cookie n'est stocké sur votre navigateur par Matomo.
           </p>
           <p>
             Les utilisateurs du Site reconnaissent avoir été informés de cette
             pratique et autorisent le Site à l’employer. Ils pourront désactiver
-            ce cookie par l’intermédiaire des paramètres de leur logiciel de
+            ce suivi par l’intermédiaire des paramètres de leur logiciel de
             navigation.
           </p>
         </div>
@@ -130,4 +140,6 @@ const LegalPage = () => {
 
 export default LegalPage;
 
-export const Head = () => <Seo title="Gabriel G. - Mentions légales" />;
+export const Head = () => (
+  <Seo title="Mentions légales - Gabriel G. développeur web" />
+);

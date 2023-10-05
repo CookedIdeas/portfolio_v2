@@ -73,7 +73,9 @@ const Hero = () => {
             Gabriel Gourcerol
           </h1>
           <h2 className="text-2xl flex flex-col gap-4 items-center md:items-start ">
-            <span className="md:pl-24 !text-white">Développeur full-stack</span>
+            <span className="md:pl-24 !text-white">
+              Développeur web full-stack
+            </span>
             <span className="md:pl-32 !text-white">
               spécialisé solutions Saas
             </span>

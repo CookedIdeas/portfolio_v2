@@ -7,7 +7,6 @@ import {
 } from 'react-icons/bs';
 import { useSendMail } from '../../4_customHooks/useSendMail';
 import { useGlobalContext } from '../../2_context/GlobalContext';
-import SocialLinks from '../2_layouts/1_navigation/SocialLinks';
 import { socialLinks } from '../../1_assets/datas/socialLinks';
 
 const Contact = () => {
@@ -24,9 +23,9 @@ const Contact = () => {
 
   const [isSendMailButtonEnabled, setIsSendMailButtonEnabled] = useState(false);
 
-  useEffect(() => {
-    console.log('isSendMailButtonEnabled', isSendMailButtonEnabled);
-  }, [isSendMailButtonEnabled]);
+  // useEffect(() => {
+  //   console.log('isSendMailButtonEnabled', isSendMailButtonEnabled);
+  // }, [isSendMailButtonEnabled]);
 
   const [nameValue, setNameValue] = useState('');
   const [companyValue, setCompanyValue] = useState('');
@@ -34,7 +33,6 @@ const Contact = () => {
   const [phoneValue, setPhoneValue] = useState('');
   const [messageValue, setMessageValue] = useState('');
 
-  const [isSendEmailLoading, setIsSendEmailLoading] = useState(false);
   const [isSendEmailSuccess, setIsSendEmailSuccess] = useState(false);
   const [isSendEmailError, setIsSendEmailError] = useState(false);
 
@@ -80,24 +78,25 @@ const Contact = () => {
         });
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allInputs]);
 
-  const emailIsError = (isError) => {
-    if (isError) {
-      document.getElementById('mail-input').classList.add('invalid-input');
-      document.getElementById('email-error-message').style.display = 'block';
-    } else {
-      document.getElementById('mail-input').classList.remove('invalid-input');
-      document.getElementById('email-error-message').style.display = 'none';
-    }
-  };
+  // const emailIsError = (isError) => {
+  //   if (isError) {
+  //     document.getElementById('mail-input').classList.add('invalid-input');
+  //     document.getElementById('email-error-message').style.display = 'block';
+  //   } else {
+  //     document.getElementById('mail-input').classList.remove('invalid-input');
+  //     document.getElementById('email-error-message').style.display = 'none';
+  //   }
+  // };
 
-  const checkInputValidity = (inputName, e) => {
-    if (inputName === 'mail') {
-      const isEmailValid = validateEmail(e.target.value);
-      emailIsError(!isEmailValid);
-    }
-  };
+  // const checkInputValidity = (inputName, e) => {
+  //   if (inputName === 'mail') {
+  //     const isEmailValid = validateEmail(e.target.value);
+  //     emailIsError(!isEmailValid);
+  //   }
+  // };
 
   const { isLoading, isError, isSuccess, sendMail } = useSendMail();
 
@@ -131,15 +130,15 @@ const Contact = () => {
       return;
 
     const mailBody = allInputs;
-    console.log('mailBody', mailBody);
+    // console.log('mailBody', mailBody);
 
-    console.log('send request');
+    // console.log('send request');
 
-    console.log('isLoading', isLoading);
+    // console.log('isLoading', isLoading);
 
     sendMail(mailBody, {
       onSuccess: () => {
-        console.log('success from contact');
+        // console.log('success from contact');
       },
     });
   };
@@ -163,7 +162,7 @@ const Contact = () => {
     }
 
     if (secondNotificationMessage.type === 'wrong_email') {
-      console.log(mailValue);
+      // console.log(mailValue);
       if (validateEmail(mailValue)) {
         setSecondNotificationMessage({
           type: '',
@@ -330,7 +329,7 @@ const Contact = () => {
               )}
             </IconContext.Provider>
           </button>
-          <span className="absolute bottom-[-2rem]">
+          <span className="absolute bottom-[-3rem] lg:bottom-[-2rem] text-center">
             {notificationMessage.message}
             {secondNotificationMessage.message}
           </span>

@@ -9,7 +9,8 @@ export const useSendMail = (mailBody) => {
     isSuccess,
     isError,
   } = useMutation({
-    mutationFn: (mailBody) => customFetch.post('/sendMail', mailBody),
+    mutationFn: (mailBody) =>
+      customFetch.post('/mail-from-portfolio', mailBody),
     onSuccess: () => {
       console.log('success');
     },

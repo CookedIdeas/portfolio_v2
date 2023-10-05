@@ -35,7 +35,9 @@ const SingleRecommandation = ({ reco, faceImg }) => {
           <h3 className="!text-black !font-semibold text-center sm:text-start">
             {fullName} {company && `- ${company}`}
           </h3>
-          <span className="!text-black !font-medium ">{position}</span>
+          <span className="!text-black !font-medium text-center sm:text-left">
+            {position}
+          </span>
         </div>
       </div>
       <p

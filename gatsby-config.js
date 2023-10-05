@@ -7,8 +7,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `3_portfolio_v2`,
-    description: 'TO WRITE',
+    title: `Gabriel G. - Développeur web Full stack pour Saas et autres projets web`,
+    description:
+      'Voici mon site personnel de développeur web full stack ! Je suis spécialisé dans le développement de solutions Saas avec React.js et Gatsby.js pour le front-end et Node.js et Strapi pour le backend.',
     siteDefaultLang: 'fr',
     author: '@Gsquare',
     linkedInUsername: 'Gabriel G.',
@@ -24,8 +25,6 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-svgr',
     `gatsby-plugin-sass`,
-    `gatsby-plugin-recaptcha`,
-    'gatsby-plugin-htaccess',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -79,6 +78,15 @@ module.exports = {
         www: false,
         SymLinksIfOwnerMatch: true,
         host: 'gabrielgourcerol.com', // if 'www' is set to 'false', be sure to also remove it here!
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-matomo',
+      options: {
+        siteId: '2',
+        matomoUrl: 'https://stats.imaxdev.fr/',
+        siteUrl: 'https://gabrielgourcerol.com/',
+        disableCookies: true,
       },
     },
   ],

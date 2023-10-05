@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../../2_context/GlobalContext';
 import { useSiteMetadata } from '../../4_customHooks/useSiteMetadata';
+import meta_img from '../../1_assets/images/meta_image/meta_img.png';
 
 const Seo = ({ title, description, pathname, children }) => {
   const { lang_fr } = useGlobalContext();
@@ -18,7 +19,7 @@ const Seo = ({ title, description, pathname, children }) => {
     url: `${siteUrl}${pathname || ``}`,
     linkedInUsername,
     siteDefaultLang,
-    image: `${siteUrl}/static/meta_img.png}`,
+    image: meta_img,
   };
 
   return (
