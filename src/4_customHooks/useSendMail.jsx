@@ -11,12 +11,12 @@ export const useSendMail = (mailBody) => {
   } = useMutation({
     mutationFn: (mailBody) =>
       customFetch.post('/mail-from-portfolio', mailBody),
-    onSuccess: () => {
-      console.log('success');
-    },
-    onError: (error) => {
-      console.log(error);
-    },
+    // onSuccess: () => {
+    //   // console.log('success');
+    // },
+    // onError: (error) => {
+    //   // console.log(error);
+    // },
   });
   return { sendMail, isLoading, data, isError, isSuccess };
 };

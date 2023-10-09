@@ -3,7 +3,7 @@ import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { useGlobalContext } from '../../../2_context/GlobalContext';
 
 const ThemeSwitch = ({ forSidebar }) => {
-  const { toggleDark, dark, lang_fr } = useGlobalContext();
+  const { toggleDark, dark } = useGlobalContext();
 
   const [checked, setChecked] = useState(dark);
   const handleChange = () => {
@@ -22,11 +22,8 @@ const ThemeSwitch = ({ forSidebar }) => {
       <input
         type="checkbox"
         role="button"
-        aria-label={
-          lang_fr
-            ? 'boutton switch pour choisir en le thème sombre et le thème lumineux'
-            : 'switch button to chose dark mode or light mode'
-        }
+        id="theme-switch"
+        aria-label="boutton switch pour choisir en le thème sombre et le thème lumineux"
         className="sr-only peer"
         onChange={handleChange}
         checked={checked}

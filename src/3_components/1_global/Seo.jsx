@@ -1,7 +1,6 @@
 import React from 'react';
 import { useGlobalContext } from '../../2_context/GlobalContext';
 import { useSiteMetadata } from '../../4_customHooks/useSiteMetadata';
-import meta_img from '../../1_assets/images/meta_image/meta_img.png';
 
 const Seo = ({ title, description, pathname, children }) => {
   const { lang_fr } = useGlobalContext();
@@ -11,6 +10,7 @@ const Seo = ({ title, description, pathname, children }) => {
     siteUrl,
     linkedInUsername,
     siteDefaultLang,
+    image,
   } = useSiteMetadata();
 
   const seo = {
@@ -19,7 +19,7 @@ const Seo = ({ title, description, pathname, children }) => {
     url: `${siteUrl}${pathname || ``}`,
     linkedInUsername,
     siteDefaultLang,
-    image: meta_img,
+    image: `${siteUrl}${image}`,
   };
 
   return (
@@ -31,7 +31,7 @@ const Seo = ({ title, description, pathname, children }) => {
       <meta name="image" content={seo.image} />
       <meta
         property="og:title"
-        content="Portfolio | Gabriel G. Web Developer"
+        content="Portfolio | Gabriel G. Développeur web"
       />
       <meta
         property="og:description"

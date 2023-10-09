@@ -31,7 +31,7 @@ const avatarQuery = graphql`
               placeholder: DOMINANT_COLOR
               width: 300
               layout: CONSTRAINED
-              quality: 100
+              quality: 90
               formats: WEBP
             )
           }

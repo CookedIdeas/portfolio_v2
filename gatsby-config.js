@@ -14,8 +14,8 @@ module.exports = {
     author: '@Gsquare',
     linkedInUsername: 'Gabriel G.',
     githubUsername: 'CookedIdeas',
-    image: './src/assets/android-chrome-192x192.png',
-    siteUrl: `https://www.gabrielgourcerol.com`,
+    image: '/meta_img.png',
+    siteUrl: `https://gabrielgourcerol.com`,
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -52,10 +52,6 @@ module.exports = {
       options: {
         fonts: {
           google: [
-            {
-              family: 'Raleway',
-              variants: ['300', '400', '700'],
-            },
             {
               family: 'Source Code Pro',
               variants: ['400', '700'],
