@@ -207,7 +207,7 @@ const Contact = () => {
             />
             <div className={`cut !w-[71px] `}></div>
             <label htmlFor="nom" className="placeholder">
-              Votre nom
+              Votre nom complet
             </label>
           </div>
 

@@ -12,9 +12,8 @@ export const recomandations = [
   {
     id: 2,
     name: 'stephane',
-    fullName: 'Stéphane Caezenave',
-    position:
-      'Consultant, formateur de formateurs, ingénieur pédagogique et facilitateur',
+    fullName: 'Stéphane Cazenave',
+    position: 'Consultant en transformation des organismes de formation',
     linkedinLink: 'https://www.linkedin.com/in/stephanecazenave/',
     company: '',
     verbatim:
@@ -38,6 +37,6 @@ export const recomandations = [
   //   linkedinLink: 'https://www.linkedin.com/in/ma%C3%ABl-dugu%C3%A9-35725277/',
   //   company: 'Natura Scop',
   //   verbatim:
-  //     "“Les collaborations avec Gabriel sur deux projets dont un de grande ampleur entre 2020 et 2022 se sont toujours très bien passées. <strong>Gabriel a toujours été très professionnel, à l'écoute des demandes</strong> malgré les adaptations que nous avons dû réaliser en cours de projet, très réactif et disponible aussi bien par mail que par téléphone. <strong>Les délais convenus pour les rendus ont toujours été respectés</strong> même lorsque ceux-ci étaient particulièrement courts. Je recommande vivement Gabriel pour le professionnalisme, son écoute et la qualité de son travail. En espérant avoir l'occasion de retravailler avec lui prochainement. ”",
+  //     "“Les collaborations avec Gabriel sur deux projets dont un de grande ampleur entre 2020 et 2022 se sont toujours très bien passées. <strong>Gabriel a toujours été très professionnel, à l'écoute des demandes</strong> malgré les adaptations que nous avons dû réaliser en cours de projet, très réactif et disponible aussi bien par mail que par téléphone. <strong>Les délais convenus pour les rendus ont toujours été respectés</strong> même lorsque ceux-ci étaient particulièrement courts. Je recommande vivement Gabriel pour le professionnalisme, son écoute et la qualité de son travail. En espérant avoir l'occasion de retravailler avec lui prochainement.”",
   // },
 ];

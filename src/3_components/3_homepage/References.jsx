@@ -6,7 +6,7 @@ import { references } from '../../1_assets/datas/references';
 const References = () => {
   return (
     <Wrapper id="references_section" className="min-h-35 flex flex-col gap-12 ">
-      <h2>Mes réalisations</h2>
+      <h2>Mes principales réalisations</h2>
       {references.map((reference) => (
         <SingleReference key={reference.basic_name} project={reference} />
       ))}
