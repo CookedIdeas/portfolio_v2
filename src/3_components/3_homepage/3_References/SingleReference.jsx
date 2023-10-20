@@ -61,9 +61,9 @@ const projectImageQuery = graphql`
           childImageSharp {
             gatsbyImageData(
               placeholder: DOMINANT_COLOR
-              width: 500
+              width: 700
               layout: CONSTRAINED
-              quality: 90
+              quality: 100
               formats: WEBP
             )
           }

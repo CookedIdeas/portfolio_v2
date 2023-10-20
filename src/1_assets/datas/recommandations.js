@@ -29,14 +29,14 @@ export const recomandations = [
     verbatim:
       "“La mission s'est particulièrement bien déroulée en temps et en qualité. Sans que nous ayons bien su exprimer notre besoin, Gabriel nous a accompagné en mode agile pour valider étape par étape le produit qui nous intéressait. Il nous a guidé dans nos échanges pour bien comprendre notre finalité et nous proposer des maquettes que l'on pouvait critiquer régulièrement.”",
   },
-  // {
-  //   id: 4,
-  //   name: 'mael',
-  //   fullName: 'Maël Dugué',
-  //   position: 'Ecologue naturaliste indépendant',
-  //   linkedinLink: 'https://www.linkedin.com/in/ma%C3%ABl-dugu%C3%A9-35725277/',
-  //   company: 'Natura Scop',
-  //   verbatim:
-  //     "“Les collaborations avec Gabriel sur deux projets dont un de grande ampleur entre 2020 et 2022 se sont toujours très bien passées. <strong>Gabriel a toujours été très professionnel, à l'écoute des demandes</strong> malgré les adaptations que nous avons dû réaliser en cours de projet, très réactif et disponible aussi bien par mail que par téléphone. <strong>Les délais convenus pour les rendus ont toujours été respectés</strong> même lorsque ceux-ci étaient particulièrement courts. Je recommande vivement Gabriel pour le professionnalisme, son écoute et la qualité de son travail. En espérant avoir l'occasion de retravailler avec lui prochainement.”",
-  // },
+  {
+    id: 4,
+    name: 'mael',
+    fullName: 'Maël Dugué',
+    position: 'Ecologue naturaliste indépendant',
+    linkedinLink: 'https://www.linkedin.com/in/ma%C3%ABl-dugu%C3%A9-35725277/',
+    company: 'Natura Scop',
+    verbatim:
+      "“Les collaborations avec Gabriel sur deux projets dont un de grande ampleur entre 2020 et 2022 se sont toujours très bien passées. <strong>Gabriel a toujours été très professionnel, à l'écoute des demandes</strong> malgré les adaptations que nous avons dû réaliser en cours de projet, très réactif et disponible aussi bien par mail que par téléphone. <strong>Les délais convenus pour les rendus ont toujours été respectés</strong> même lorsque ceux-ci étaient particulièrement courts. Je recommande vivement Gabriel pour le professionnalisme, son écoute et la qualité de son travail. En espérant avoir l'occasion de retravailler avec lui prochainement.”",
+  },
 ];
